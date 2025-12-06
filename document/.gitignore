@@ -5,4 +5,13 @@
 *.out
 *.synctex.gz
 *.toc
-/*.pdf
+*.lot
+*.lof
+*.ist
+*.glsdefs
+*.glo
+*.blg
+*.bcf
+*.bbl
+*.acn
+*.run.xml
