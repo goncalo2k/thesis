@@ -37,6 +37,7 @@
 \setlength{\parskip}{0pt}
 \titlespacing{\section}{0pt}{1.5\baselineskip}{\baselineskip} % (left, before, after)
 \titlespacing{\subsection}{0pt}{\baselineskip}{\baselineskip}
+\titlespacing{\subsubsection}{0pt}{\baselineskip}{\baselineskip}
 \fancyfoot[LE,RO]{\thepage} % Esquerda nas pares, direita nas ímpares
 \setlength{\footskip}{1.25cm} % Distância ao fundo da página
 
@@ -51,6 +52,9 @@
       \z@{.5\linespacing\@plus.7\linespacing}{.25\linespacing}%
       {\normalfont\bfseries\flushleft}}
     \def\subsection{\@startsection{subsection}{2}%
+      \z@{.5\linespacing\@plus.7\linespacing}{.25\linespacing}%
+      {\normalfont\bfseries\flushleft}}
+    \def\subsubsection{\@startsection{subsubsection}{3}%
       \z@{.5\linespacing\@plus.7\linespacing}{.25\linespacing}%
       {\normalfont\bfseries\flushleft}}
 
@@ -151,7 +155,9 @@
 \thispagestyle{empty}
 \null
 \frontmatter
-\addtocontents{toc}{\setcounter{tocdepth}{2}}
+\addtocontents{toc}{\setcounter{tocdepth}{3}    % include subsubsections in the ToC
+\setcounter{secnumdepth}{3} % (optional) number subsubsections as well
+}
 
 
 \chapter*{Acknowledgement}
@@ -202,10 +208,9 @@ Research in \gls{rtd} - which is one of the most common types of \gls{td}, accor
 
 The risk introduced by poor \gls{re} is particularly alarming in organizations that rely on swiftly composed or distributed teams. Due to this, this study aims to explore the influence of requirement gathering practices on the accumulation of \gls{td} and the quality of software outputs, while exploring what are the most common causes of \gls{rtd} and how they can be identified and correctly mitigated in a real world environment. 
 
-
-
 \chapter{Related Work}
-\noindent In order to summarize all current relevant knowledge regarding the topic subject to research, to identify research gaps and to indicate new areas for posterior investigation, this study was conducted as a \gls{slr} and followed the guidelines defined by \textcite{Kitchenham2007}, that divides the research into 3 different stages: the review planning, the review conduction, and the review report. As per the authors, a systematic approach is predefined using a review protocol that creates research questions and the methods used in the review, in order to target such questions. This allows for the study to be repeatable, which improves its transparency and enables any reader to assess a study's rigor and integrity \parencite{Kitchenham2007}.
+\section{Systematic Literature Review}
+\noindent In order to summarize all current relevant academic knowledge regarding the topic subject to research, to identify research gaps and to indicate new areas for posterior investigation, this study was conducted as a \gls{slr} and followed the guidelines defined by \textcite{Kitchenham2007}, that divides the research into 3 different stages: the review planning, the review conduction, and the review report. As per the authors, a systematic approach is predefined using a review protocol that creates research questions and the methods used in the review, in order to target such questions. This allows for the study to be repeatable, which improves its transparency and enables any reader to assess a study's rigor and integrity \parencite{Kitchenham2007}.
 
 \begin{figure}[htbp]
     \centering
@@ -214,25 +219,33 @@ The risk introduced by poor \gls{re} is particularly alarming in organizations t
     \label{fig:slr_phases}
 \end{figure}
 
-\section{Review Planning Stage}
+\subsection{Review Planning Stage}
 \noindent This section refers to the \gls{slr} methodology's first stage, where the rationale for conducting the 
 review should be outlined, as well as the research questions, and where the review protocol is defined.
-\subsection{Review Motivation}
+\subsubsection{Review Motivation}
 \noindent Despite growing awareness of \gls{td} in software engineering, the impact of \gls{re} on its mitigation and accumulation remains underexplored. Unreliable requirements are often mentions as key actors to \gls{rtd}, mainly in environments where  documentation and quality requirements are often de-prioritized, such as AGILE and fast-paced development environments \parencite{Behutiye2022}. \textcite{Melo2022} states that, while causes and metrics for \gls{rtd} have been already draft by some studies, current work lacks a systematic and comprehensive compilation of how these issues are generated, as well as their impact on long-lasting product quality, and how they can be addressed correctly. Case studies that concern both small and large projects reveal that poor requirement gathering techniques can lead to extensive refactoring due to product misalignment with client expectations and to increased maintenance costs, indicators that are highly correlated with \gls{td} \parencite{Gupta2020}. This \gls{slr} is produced based on the need to clarify the connection between deficient \gls{re} and \gls{td}, to understand their long-term effects on \gls{sq}, and to identify ways to predict and mitigate \gls{rtd} in heterogeneous development contexts.
-\subsection{Research Questions}
+\subsubsection{Research Questions}
+
 \noindent The focus of this review is to address the following questions:\par
 \hspace*{\linewidth}\par
 \noindent\textbf{RQ.1}: How do incomplete or evolving requirements contribute to the accumulation of technical debt in software development projects?\par
 \hspace*{\linewidth}\par
 \noindent\textbf{RQ.2}: What is the relationship between the quality of requirement gathering practices and software product quality outcomes over time?\par
 \hspace*{\linewidth}\par
-\noindent\textbf{RQ.3}: Which requirement-related factors most commonly lead to technical debt, and how are they identified and mitigated in practice?
-\subsection{Review Protocol}
+\noindent\textbf{RQ.3}: Which requirement-related factors most commonly lead to technical debt, and how are they identified and mitigated in practice?\par
+\hspace*{\linewidth}\par
+\noindent\textbf{RQ.4}: 
+What RE process is most commonly linked to technical debt, and how can they improve to mitigate technical debt?\par
+\hspace*{\linewidth}\par
+\noindent\textbf{RQ.5}: 
+How do different project contexts and team structures affect the emergence or management of RTD?\par
+
+\subsubsection{Review Protocol}
 \noindent The databases considered for the search are SCOPUS\footnote{\url{https://www.scopus.com/}}, the ACM Digital Library\footnote{\url{https://dl.acm.org/}}, and the IEEE Xplore Digital Library\footnote{\url{https://ieeexplore.ieee.org/Xplore/home.jsp}} . 
 
-\section{Review Conducting Stage}
+\subsection{Review Conducting Stage}
 \noindent This section represents the second stage in the \gls{slr} methodology, where the protocol's application is described. The analysis of the extracted data also occurs during this stage. 
-\subsection{Research Identification}
+\subsubsection{Research Identification}
 \noindent Starting from this study's research question, the necessary keywords to perform the research were extracted in order to generate an insightful search string, as shown in \tabref{tab:keywords_and_search_string}.
 
 \begin{table}[htbp]
@@ -248,7 +261,7 @@ review should be outlined, as well as the research questions, and where the revi
     \label{tab:keywords_and_search_string}
 \end{table}
 
-\subsection{Study Selection}
+\subsubsection{Study Selection}
 \noindent For this study, 7 filters where used to thin down the search result, listed on \tabref{tab:filters}.
 \clearpage
 \begin{table}[htbp]
@@ -310,7 +323,7 @@ application of the filter "2018-2025," that reduced the number of studies to be 
     \label{fig:slr_search_filtration_diagram}
 \end{figure}
 \clearpage
-\subsection{Data Extraction and Analysis}
+\subsubsection{Data Extraction and Analysis}
 \noindent Across the 30 studies selected, most were conference papers (53.3\%) or journal articles (43.3\%), while only 3.3\% of the selected studies were generic articles, as shown in \figref{fig:statistics}. As for the distribution of the studies by publication year, the most predominant year taken into consideration was 2020, with a significance of 33.3\%, followed by 2019 (23.3\%) and 2018 (20.0\%). Together, these three publication years have an importance of more than 75\%, as only 23.4\% of the analyzed studies were published between the years of 2021 and 2023. This may be the case, as the awareness of AGILE and rapid development practices limitations increases, mainly regarding the management of long-term \gls{sq} and the disregard of \gls{nfr} \parencite{Behutiye2020, Melo2022}.
 
 
@@ -331,9 +344,9 @@ application of the filter "2018-2025," that reduced the number of studies to be 
     \label{fig:statistics}
 \end{figure}
 
-\section{Review Reporting Stage}
+\subsection{Review Reporting Stage}
 \noindent This section regards the final phase of the \gls{slr} methodology. It encapsulates the extracted data and answers to the outlined research questions. 
-\subsection{Data Summary}
+\subsubsection{Data Summary}
 \noindent To improve the current understanding on the influence of multiple factors of requirements gathering in \gls{td} and \gls{sq}, a collection of key terms utilized in the literature to describe a multitude of concepts regarding \gls{rtd} was determined across the 30 studies. \tabref{tab:key_term_ref} summarizes all the main key term, as well as the number of studies in which each one is used, and the corresponding reference identifiers to those usages. This analysis aims to emphasize both the relevance of certain concepts and the diversity of perspectives and terminologies described across multiple studies.
 
 \begin{table}[htbp]
@@ -432,7 +445,7 @@ Refactoring and Technical Debt Mitigation Strategies & S1, S4, S6, S9, S13, S17,
 \end{table}
 
 \noindent These three tables provided a structured overview of themes explored by current literature. As the data extraction phase aims to provide a deeper understanding of how \gls{re} practices relate to the genesis and mitigation of \gls{td}, the mapping of these dimensions plays a crucial role into providing these insights. 
-\subsection{Findings Report}
+\subsubsection{Findings Report}
 \noindent\textbf{RQ.1}: How do incomplete or evolving requirements contribute to the accumulation of technical debt in software development projects?\par
 
 Literature consistently identifies incomplete or mutable requirements as foundational causes of \gls{td}, especially \gls{rtd} \parencite{Melo2022, Waltersdorfer2020}. Throughout the evaluation of current work, it is clear that the end product of projects based on vague, unstable, or weakly-elaborated requirements is often over complicated and flawed at the architecture level.
@@ -487,6 +500,13 @@ Integrating mitigation approaches in development team culture and workflows is b
 
 In conclusion, requirement-related variables that contribute to \gls{td} are highly correlated with both technical approaches and organizational culture. The incidence and severity of \gls{rtd} can be decreases by fostering requirement clarity, traceability, and integrating \gls{re} with technical processes, and criticality of \gls{rtd}. \textcite{Melo2022} emphasizes that ambiguous, poorly specified, untraceable requirement tend to make software deliveries more prone to refactoring and architecture degradation The author also mentions that well-established practices for the governance leads teams to face less long-term quality issues.
 
+\hspace*{\linewidth}\par
+\noindent\textbf{RQ.4}: 
+TODO: What RE process is most commonly linked to technical debt, and how can they improve to mitigate technical debt?\par
+
+\hspace*{\linewidth}\par
+\noindent\textbf{RQ.5}: 
+TODO:How do different project contexts and team structures affect the emergence or management of RTD?\par
 
 \subsection{\gls{slr} Conclusions}
 
@@ -502,6 +522,8 @@ Collectively, the outcomes of this review have both academic value and real worl
 
 In conclusion, this review reinforces that \gls{td} is a controllable outcome of intentional design decisions, rather than an inevitable effect of fast-paced development. By treating requirements with the necessary rigor and strategic attention they require, development teams are enabled to create systems that are not only functional, but also sustainable.
 
+\section{Multivocal Literature Review}
+\subsection{}
 \chapter{Research Methodology}
 \noindent This study implements a case study methodology, outlined by \textcite{Runeson2009}, to explore the impact of \gls{re} practices on \gls{rtd} in a corporate context. The purpose of this case study is to identify and scrutinize how real-world software development teams within the studied company approaches \gls{re} and \gls{rtd} in daily workflows.
 
