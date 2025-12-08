@@ -6,6 +6,7 @@
 \usepackage{amsfonts}
 \usepackage{chngcntr}
 \usepackage{graphicx}
+\usepackage{csquotes}
 \usepackage{subcaption}
 \usepackage[a4paper, margin=2.5cm]{geometry}
 \usepackage[english]{babel}
@@ -181,12 +182,15 @@ In order to tackle this gap, this research combines a Systematic Literature Revi
 
 %Acronyms
 \newacronym{slr}{SLR}{Systematic Literature Review}
+\newacronym{mlr}{MLR}{Multivocal Literature Review}
 \newacronym[description={Requirement Engineering}]{re}{RE}{requirement engineering}
 \newacronym[description={Technical Debt}]{td}{TD}{technical debt}
 \newacronym[description={Requirements-related Technical Debt}]{rtd}{RTD}{requirements-related technical debt}
 \newacronym[description={Software Quality}]{sq}{SQ}{software quality}
 \newacronym[description=Non-Functional Requirements]{nfr}{NFRs}{non-functional requirements}
 \newacronym{satd}{SATD}{Self-Admitted Technical Debt}
+\newacronym{dsr}{DSR}{Design Science Research}
+\newacronym{csr}{CSR}{Case Study Research}
 
 
 \printglossary[type=\acronymtype,style=glostable,title={List of Acronyms}]
@@ -244,9 +248,9 @@ How do different project contexts and team structures affect the emergence or ma
 \noindent The databases considered for the search are SCOPUS\footnote{\url{https://www.scopus.com/}}, the ACM Digital Library\footnote{\url{https://dl.acm.org/}}, and the IEEE Xplore Digital Library\footnote{\url{https://ieeexplore.ieee.org/Xplore/home.jsp}} . 
 
 \subsection{Review Conducting Stage}
-\noindent This section represents the second stage in the \gls{slr} methodology, where the protocol's application is described. The analysis of the extracted data also occurs during this stage. 
+\noindent This section represents the second stage in the \gls{slr} methodology, where the protocol's application is described. The analysis of the extracted data also occurs during this stage.
 \subsubsection{Research Identification}
-\noindent Starting from this study's research question, the necessary keywords to perform the research were extracted in order to generate an insightful search string, as shown in \tabref{tab:keywords_and_search_string}.
+\noindent Starting from this study's research question, the necessary keywords to perform the research were extracted in order to generate an insightful search string, as shown in \tabref{tab:slr_keywords_and_search_string}.
 
 \begin{table}[htbp]
     \centering
@@ -257,8 +261,8 @@ How do different project contexts and team structures affect the emergence or ma
         Search String & "Technical Debt" AND "Requirements" AND "Software" \\
         \hline
     \end{tabular}
-    \caption{Keywords and Search string}
-    \label{tab:keywords_and_search_string}
+    \caption{SLR Keywords and Search string}
+    \label{tab:slr_keywords_and_search_string}
 \end{table}
 
 \subsubsection{Study Selection}
@@ -523,9 +527,66 @@ Collectively, the outcomes of this review have both academic value and real worl
 In conclusion, this review reinforces that \gls{td} is a controllable outcome of intentional design decisions, rather than an inevitable effect of fast-paced development. By treating requirements with the necessary rigor and strategic attention they require, development teams are enabled to create systems that are not only functional, but also sustainable.
 
 \section{Multivocal Literature Review}
-\subsection{}
+\noindent In addition to the \gls{slr}, a \gls{mlr} was also conducted, complementing the findings previously obtained from academic literature with grey literature sources, so that more practical perspectives can also be taken into consideration, as the software engineering industry is in constant evolution, and new practices, tools and frameworks are frequently adopted by teams in this industry \parencite{Garousi2019}. The \gls{mlr} aims to capture insights that may not still be presented in academic publications (and, therefore, that might have not been captured by the previous \gls{slr}), thus providing a more well-rounded view of the relationship between \gls{re} and \gls{td} and what are the practices utilized in the real world to handle this subject. Another goal of this MLR was to also provide better comprehension on how the industry currently defines technical debt and how requirements engineering processes have been adapted over time to better tackle technical debt management.
+In order to conduct the \gls{mlr}, the search string was tweaked, so that it matches the exact goal of this literature review - represented on \tabref{tab:mlr_search_string}. Pieces of grey literature were also filtered by selection criteria previously defined, displayed in \tabref{tab:mlr_filters}.
+
+\begin{table}[htbp]
+    \centering
+    \begin{tabular}{|>{\columncolor{gray!30}}c|c|}
+        \hline
+        Search String & ""Requirement" AND "Technical" AND "Debt" in "Software""\\
+        \hline
+    \end{tabular}
+    \caption{MLR Search string}
+    \label{tab:mlr_search_string}
+\end{table}
+TODO: Fix search string for MLR and yield result!
+
+\begin{table}[htbp]
+    \centering
+    \begin{tabular}{|c|c|}
+        \hline
+        \rowcolor{gray!30}
+        ID & Filter \\
+        \hline
+        1 & Must be relevant for te study research \\
+        \hline
+        2 & English \\
+        \hline
+    \end{tabular}
+    \caption{Search Filters}
+    \label{tab:mlr_filters}
+\end{table}
+
 \chapter{Research Methodology}
-\noindent This study implements a case study methodology, outlined by \textcite{Runeson2009}, to explore the impact of \gls{re} practices on \gls{rtd} in a corporate context. The purpose of this case study is to identify and scrutinize how real-world software development teams within the studied company approaches \gls{re} and \gls{rtd} in daily workflows.
+This study follows a mixed approach based in \gls{dsr}, which, according to \textcite{Brocke2020}, is a
+ “a problem-solving paradigm that seeks to enhance human knowledge via the creation of innovative
+  artifacts”. However, as the study strives to output both an artifact while also an explanation for a real-world phenomenon,
+  it also integrates \gls{csr}, which can be used “before the 
+  design of the artifact… to evaluate some preliminary forms or some parts of 
+  the artifact” \parencite{Costa2016}.
+
+\section{Design Science Research}
+\gls{dsr} sets the foundation this dissertation. As described by \parencite{Brocke2020}, \gls{dsr}
+is “a problem-solving paradigm that seeks to enhance human knowledge via 
+the creation of innovative artifacts”, which has as its main goal to “extend the 
+boundaries of human and organizational capabilities by designing new 
+and innovative artifacts” \parencite{Brocke2020}.
+
+In order to apply this methodology, the problem must be identified, 
+as well as solution objectives, which will lead to the design and 
+development of the final artifact, which will then be demonstrated, 
+evaluated, and communicated \parencite{Brocke2020}, displayed in \figref{fig:dsr_phases}.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.4\textwidth]{assets/dsr_methodology_flow_chart.png}
+    \caption{Design Science Research Phases}
+    \label{fig:dsr_phases}
+\end{figure}
+
+\section{Case Study}
+\noindent The study also implements a case study methodology, outlined by \textcite{Runeson2009}, to explore the impact of \gls{re} practices on \gls{rtd} in a corporate context. The purpose of this case study is to identify and scrutinize how real-world software development teams within the studied company approaches \gls{re} and \gls{rtd} in daily workflows.
 
 The study will collect data by means of interviews, document analysis, and monitoring of project artifacts and sprint ceremonies. Insights will be triangulated in order to comprehend how \gls{td} accumulation is impacted by requirement quality, documentation, and traceability. The findings will be evaluated relative to the outcomes of the \gls{slr} to validate, contrast, and extend established knowledge. In conclusion, the study seeks to contribute to the generation of relevant, customized suggestions for improving \gls{re} practices in the company.
 
@@ -534,6 +595,26 @@ The study will collect data by means of interviews, document analysis, and monit
     \includegraphics[width=0.4\textwidth]{assets/case_study_flow_diagram.png}
     \caption{Case Study Elaboration Phases}
     \label{fig:case_study_phases}
+\end{figure}
+
+\section{Hybrid Methodology}
+\noindent The methodological design of this dissertation combines 
+\gls{dsr} and \gls{csr}. This mixed approach is adopted in order to both analyse an empirical 
+phenomenon and develop an artifact, as \textcite{Costa2016} emphasizes that \gls{csr} provides 
+essential “knowledge about the empirical context”, enabling a better and more precise definition of the 
+problem, stakeholders, and requirements for the artifact in development. 
+
+This supports \textit{ex-ante} activities, such as refining objectives and grounding design decisions in real organizational practices.
+
+\textcite{Nabukenya2012} reiterates the value of utilized an hybrid methodology, arguing that “combining \gls{csr}, 
+\gls{dsr} and AR methods is most suitable to support the execution” of research closely tied organizational practices. 
+
+Together, the merger of these two methodologies creates a coherent research strategy that promotes precision, contextual relevance, practical utility and ensures that the most current industry practices are being taken into consideration.
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=1\textwidth]{assets/research_methodology_flow_chart.png}
+    \caption{Research Methodology Phases}
+    \label{fig:research_methodology_phases}
 \end{figure}
 
 \renewcommand{\bibname}{References}
