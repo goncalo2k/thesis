@@ -184,10 +184,12 @@ In order to tackle this gap, this research combines a Systematic Literature Revi
 \newacronym{slr}{SLR}{Systematic Literature Review}
 \newacronym{mlr}{MLR}{Multivocal Literature Review}
 \newacronym[description={Requirement Engineering}]{re}{RE}{requirement engineering}
+\newacronym[description={Quality Requirements}]{qr}{QRs}{quality requirements}
 \newacronym[description={Technical Debt}]{td}{TD}{technical debt}
 \newacronym[description={Requirements-related Technical Debt}]{rtd}{RTD}{requirements-related technical debt}
 \newacronym[description={Software Quality}]{sq}{SQ}{software quality}
 \newacronym[description=Non-Functional Requirements]{nfr}{NFRs}{non-functional requirements}
+\newacronym[description=Functional Requirements]{fr}{FRs}{functional requirements}
 \newacronym{satd}{SATD}{Self-Admitted Technical Debt}
 \newacronym{dsr}{DSR}{Design Science Research}
 \newacronym{csr}{CSR}{Case Study Research}
@@ -208,7 +210,7 @@ In order to tackle this gap, this research combines a Systematic Literature Revi
 
 Although awareness of the risk incomplete, unstable or ambiguous requirements pose to a project is rising, many continue to suffer due to this factor, particularly in fast-paced environments where adaptability are prioritized over documentation and long-term planning, such as contexts related to AGILE and startups \parencite{Behutiye2022, Gupta2020}. Though AGILE methods may be beneficial for swift delivery and user-centric development, they often tend to undermine \gls{nfr} and a solid architectural design, which contributes to challenges in the long run, such as the need to refactor certain parts of the system or even quality degradation \parencite{Snoeck2022}, being the dynamic between short-term delivery goals and long-term software robustness becomes evident in cases where requirements deviate halfway through development or are under-specified.
 
-Research in \gls{rtd} - which is one of the most common types of \gls{td}, according to \textcite{Wattanakriengkrai2018} - unveils that decisions made under uncertainty or pressure tend to output “quick fixes” that accumulate over time and hinder future changes, testing, or scale, as stated by \textcite{Melo2022}. In theory, these trade-offs are not inherently harmful, as they can be useful tools when correctly managed. However, in practice, \gls{rtd} is usually left unidentified or undocumented during the requirements phase, resulting in developer teams that are oblivious to the existence of such issues, until they cripple development progress, as documentation regarding quality requirements is usually less of a priority for development teams, regardless of the potential problems this is likely to cause in the long-term, according to  \textcite{Behutiye2022}.
+Research in \gls{rtd} - which is one of the most common types of \gls{td}, according to \textcite{Wattanakriengkrai2018} - unveils that decisions made under uncertainty or pressure tend to output “quick fixes” that accumulate over time and hinder future changes, testing, or scale, as stated by \textcite{Melo2022}. In theory, these trade-offs are not inherently harmful, as they can be useful tools when correctly managed. However, in practice, \gls{rtd} is usually left unidentified or undocumented during the requirements phase, resulting in developer teams that are oblivious to the existence of such issues, until they cripple development progress, as documentation regarding \gls{qr} is usually less of a priority for development teams, regardless of the potential problems this is likely to cause in the long-term, according to  \textcite{Behutiye2022}.
 
 The risk introduced by poor \gls{re} is particularly alarming in organizations that rely on swiftly composed or distributed teams. Due to this, this study aims to explore the influence of requirement gathering practices on the accumulation of \gls{td} and the quality of software outputs, while exploring what are the most common causes of \gls{rtd} and how they can be identified and correctly mitigated in a real world environment. 
 
@@ -227,19 +229,19 @@ The risk introduced by poor \gls{re} is particularly alarming in organizations t
 \noindent This section refers to the \gls{slr} methodology's first stage, where the rationale for conducting the 
 review should be outlined, as well as the research questions, and where the review protocol is defined.
 \subsubsection{Review Motivation}
-\noindent Despite growing awareness of \gls{td} in software engineering, the impact of \gls{re} on its mitigation and accumulation remains underexplored. Unreliable requirements are often mentions as key actors to \gls{rtd}, mainly in environments where  documentation and quality requirements are often de-prioritized, such as AGILE and fast-paced development environments \parencite{Behutiye2022}. \textcite{Melo2022} states that, while causes and metrics for \gls{rtd} have been already draft by some studies, current work lacks a systematic and comprehensive compilation of how these issues are generated, as well as their impact on long-lasting product quality, and how they can be addressed correctly. Case studies that concern both small and large projects reveal that poor requirement gathering techniques can lead to extensive refactoring due to product misalignment with client expectations and to increased maintenance costs, indicators that are highly correlated with \gls{td} \parencite{Gupta2020}. This \gls{slr} is produced based on the need to clarify the connection between deficient \gls{re} and \gls{td}, to understand their long-term effects on \gls{sq}, and to identify ways to predict and mitigate \gls{rtd} in heterogeneous development contexts.
+\noindent Despite growing awareness of \gls{td} in software engineering, the impact of \gls{re} on its mitigation and accumulation remains underexplored. Unreliable requirements are often mentions as key actors to \gls{rtd}, mainly in environments where  documentation and \gls{qr} are often de-prioritized, such as AGILE and fast-paced development environments \parencite{Behutiye2022}. \textcite{Melo2022} states that, while causes and metrics for \gls{rtd} have been already draft by some studies, current work lacks a systematic and comprehensive compilation of how these issues are generated, as well as their impact on long-lasting product quality, and how they can be addressed correctly. Case studies that concern both small and large projects reveal that poor requirement gathering techniques can lead to extensive refactoring due to product misalignment with client expectations and to increased maintenance costs, indicators that are highly correlated with \gls{td} \parencite{Gupta2020}. This \gls{slr} is produced based on the need to clarify the connection between deficient \gls{re} and \gls{td}, to understand their long-term effects on \gls{sq}, and to identify ways to predict and mitigate \gls{rtd} in heterogeneous development contexts.
 \subsubsection{Research Questions}
 
 \noindent The focus of this review is to address the following questions:\par
 \hspace*{\linewidth}\par
-\noindent\textbf{RQ.1}: How do incomplete or evolving requirements contribute to the accumulation of technical debt in software development projects?\par
+\noindent\textbf{RQ.1}: How do incomplete or evolving requirements contribute to the accumulation of \gls{td} in software development projects?\par
 \hspace*{\linewidth}\par
 \noindent\textbf{RQ.2}: What is the relationship between the quality of requirement gathering practices and software product quality outcomes over time?\par
 \hspace*{\linewidth}\par
-\noindent\textbf{RQ.3}: Which requirement-related factors most commonly lead to technical debt, and how are they identified and mitigated in practice?\par
+\noindent\textbf{RQ.3}: Which requirement-related factors most commonly lead to \gls{td}, and how are they identified and mitigated in practice?\par
 \hspace*{\linewidth}\par
 \noindent\textbf{RQ.4}: 
-What RE process is most commonly linked to technical debt, and how can they improve to mitigate technical debt?\par
+What RE process is most commonly linked to \gls{td}, and how can they improve to mitigate it?\par
 \hspace*{\linewidth}\par
 \noindent\textbf{RQ.5}: 
 How do different project contexts and team structures affect the emergence or management of RTD?\par
@@ -450,7 +452,7 @@ Refactoring and Technical Debt Mitigation Strategies & S1, S4, S6, S9, S13, S17,
 
 \noindent These three tables provided a structured overview of themes explored by current literature. As the data extraction phase aims to provide a deeper understanding of how \gls{re} practices relate to the genesis and mitigation of \gls{td}, the mapping of these dimensions plays a crucial role into providing these insights. 
 \subsubsection{Findings Report}
-\noindent\textbf{RQ.1}: How do incomplete or evolving requirements contribute to the accumulation of technical debt in software development projects?\par
+\noindent\textbf{RQ.1}: How do incomplete or evolving requirements contribute to the accumulation of \gls{td} in software development projects?\par
 
 Literature consistently identifies incomplete or mutable requirements as foundational causes of \gls{td}, especially \gls{rtd} \parencite{Melo2022, Waltersdorfer2020}. Throughout the evaluation of current work, it is clear that the end product of projects based on vague, unstable, or weakly-elaborated requirements is often over complicated and flawed at the architecture level.
 
@@ -480,7 +482,7 @@ Moreover, organizations who deploy strong \gls{re} practices are more predispose
 At last, current work indicates that \gls{re} quality is a deeply tied to \gls{sq}. By utilizing proper documentation, stakeholder involvement, traceability, and iterative validation, requirement gathering practices lead development towards more consistent, scalable, and maintainable solutions, while increasing their quality.
 
 \hspace*{\linewidth}\par
-\noindent\textbf{RQ.3}: Which requirement-related factors most commonly lead to technical debt, and how are they identified and mitigated in practice?
+\noindent\textbf{RQ.3}: Which requirement-related factors most commonly lead to \gls{td}, and how are they identified and mitigated in practice?
 
 \gls{rtd} manifests as an ongoing, multi-dimensional challenge in the literature, largely caused by a composition between structural weaknesses during the \gls{re} process and organizational practices that lack emphasis on long-term maintainability \parencite{Melo2022}. While it is true that \gls{rtd} may be dependent on multiple variables, that can independently or collectively increase it, current work systematically emphasizes a pattern in the underlying causes, along with practical methods to both identify and mitigate \gls{rtd}.
 
@@ -495,22 +497,63 @@ Another regularly verified problem is the pace at which requirements progress wi
 
 The deviation between \gls{re} practices and subsequent technical processes also contributes to the accumulation of \gls{rtd}. When requirement specification documents are not seamlessly unified with design, testing, and deployment streams, an increase on deficiencies is noticed, yet, they are not flagged until late stages of the development lifecycle. According  to \textcite{Venters2023}, the absence of alignment previously mentioned obstructs the organization from a holistic perspective on system quality, constraining their capacity to preemptively address problems.
 
-
 Current literature suggests a range of mitigation and identification strategies regarding these challenges. Examples of this are the use of automated tools to detect \gls{satd} within codebases by analyzing comments and commit messages that may display signs of requirement deviations \parencite{Li2020} or the  deployment of frameworks dedicated to assess the requirement health, such as those by mentioned by \textcite{Lenarduzzi2019}, which present metrics to evaluate the completeness, clarity, and stability of requirement artifacts. Another possible strategy to identify the described challenges is the implementation of bidirectional traceability systems, that enable early the detection of requirement violations and better impact analysis upon change introduction \parencite{Siddiqi2020}.
 
-
-Integrating mitigation approaches in development team culture and workflows is beneficial, as performing frequent stakeholder meetings, recursive refinement of requirement documents, and the inclusion of \gls{re} reviews in sprint retrospectives all lead to less \gls{rtd} build-up. \textcite{Rios2020} suggests that the integration of \gls{re} practices into AGILE ceremonies, such as backlog refinements and sprint reviews, helps on the early recognition and remediation of requirements-related issues that impact product quality. Finally, existing research supports the utilization of explicit debt trackers, wherein known RTD instances are documented, prioritized, and scheduled for resolution, as suggested by \textcite{Melo2022}.
 Integrating mitigation approaches in development team culture and workflows is beneficial, as performing frequent stakeholder meetings, recursive refinement of requirement documents, and the inclusion of \gls{re} reviews in sprint retrospectives all lead to less \gls{rtd} build-up. \textcite{Rios2020} suggests that the integration of \gls{re} practices into AGILE ceremonies, such as backlog refinements and sprint reviews, helps on the early recognition and remediation of requirements-related issues that impact product quality. Finally, existing research supports the utilization of explicit debt trackers, in which identified \gls{rtd} occurrences must be documented, prioritized, and prepared for rectification \parencite{Melo2022}.
 
 In conclusion, requirement-related variables that contribute to \gls{td} are highly correlated with both technical approaches and organizational culture. The incidence and severity of \gls{rtd} can be decreases by fostering requirement clarity, traceability, and integrating \gls{re} with technical processes, and criticality of \gls{rtd}. \textcite{Melo2022} emphasizes that ambiguous, poorly specified, untraceable requirement tend to make software deliveries more prone to refactoring and architecture degradation The author also mentions that well-established practices for the governance leads teams to face less long-term quality issues.
 
 \hspace*{\linewidth}\par
 \noindent\textbf{RQ.4}: 
-TODO: What RE process is most commonly linked to technical debt, and how can they improve to mitigate technical debt?\par
+What \gls{re} process is most commonly linked to \gls{td}, and how can they improve to mitigate it?\par
+
+Across the analysed literature, the accumulation of \gls{td} is commonly associated with AGILE and fast-paced 
+environments, largely due to the pressure associated with these environments and with how requirements are handled 
+under pressure. \textcite{Behutiye2020} highlights that \gls{qr} are usually deprioritized over \gls{fr}, which 
+leads to the underdocumentation of \gls{qr}, while also states that \gls{td} in AGILE Software Development is often 
+generated by inadequate or missing knowledge of \gls{qr} and \gls{fr}.
+
+Besides this, due to its focus being continuos delivery, AGILE Software Development is more prone to 
+\gls{td} accumulation than traditional software development \parencite{Rios2019}.
+
+When tackling the situation from a processual standpoint, the recurring option is to strengthen \gls{re} in AGILE 
+environments with concrete practices and artifacts that revolve focus on the solution's architecture and 
+\gls{qr}, while still not compromising AGILE's characteristic iterative nature when creating deliverables,
+as \textcite{Snoeck2022} argue that \gls{td} is often caused by the lack of architectural thinking associated with 
+AGILE, and propose an integrated method that enables a decrease of \gls{td} by engineering the architecture in a 
+logical, consistent and complete manner.
+
+\gls{re} processes can be improved by highlighting \gls{td} and \gls{rtd} and by improving the workflow to introduce governance practices, 
+in order to avoid reactive prioritization, as \textcite{Besker2019} report that \gls{td} prioritization is commonly 
+reactively and lacks the usage of specific strategies and that \gls{td} items are often managed and 
+prioritized in an alternative backlog.
+In conclusion, current literature consistently correlates AGILE/fast-paced contexts to \gls{td} through \gls{qr} 
+neglect, as well as frail documentation and reactive handling of \gls{td}, while the improvements mentioned are the 
+reinforcement of AGILE \gls{re} practices with explicit \gls{qr} and architecture practices, as well as the 
+integration of the backlogs in which \gls{td} is tracked into the main backlog of the development teams.
+
+
 
 \hspace*{\linewidth}\par
 \noindent\textbf{RQ.5}: 
-TODO:How do different project contexts and team structures affect the emergence or management of RTD?\par
+How do different project contexts and team structures affect the emergence or management of \gls{rtd}?\par
+
+\gls{rtd}'s existence is strongly dependant on the project's technical and social context, especially on the 
+organizational constraints, stakeholder fragmentation, and on the degree of cross-team awareness over 
+dependencies. In complex, industrial settings, the automotive development is, according to \textcite{Vogelsang2020}, 
+extremely influenced by legacy systems and organizational constraints, as well as OEM/supplier relationships, which 
+worsens the coordination and generates challenges regarding \gls{re}. \textcite{Vogelsang2020} also notes that these 
+contexts are favorable for \gls{rtd}-relevant dependencies to remain imperceptible, reinforcing that a team's
+structure and the way knowledge is distributed are directly related to how early requirement-linked issues are 
+detected. In multi-stakeholder environments with various artifacts, the validation and 
+verification of exchanged artifacts  becomes, according to \textcite{Waltersdorfer2020}, "cumbersome and error-prone”. 
+This, of course, increases the risk of mismatches between requirements and real implementation.
+
+However, \gls{rtd} management is not just a technical problem - there is also a interpersonal and organizational 
+dimention to it - which \textcite{Melo2022} conclude is not properly addressed. 
+Overall, the literature converges on the idea that larger or more heterogeneous projects, with legacy constraints, multiple stakeholders, and fragmented tooling,
+are more prone to \gls{rtd} and are harder to proactively manage. Besides this, having teams with limited awareness of dependencies and weak cross-stakeholder 
+validation also increase the likelyhood of late discovery and costly remediation of \gls{rtd}.
 
 \subsection{\gls{slr} Conclusions}
 
@@ -527,7 +570,7 @@ Collectively, the outcomes of this review have both academic value and real worl
 In conclusion, this review reinforces that \gls{td} is a controllable outcome of intentional design decisions, rather than an inevitable effect of fast-paced development. By treating requirements with the necessary rigor and strategic attention they require, development teams are enabled to create systems that are not only functional, but also sustainable.
 
 \section{Multivocal Literature Review}
-\noindent In addition to the \gls{slr}, a \gls{mlr} was also conducted, complementing the findings previously obtained from academic literature with grey literature sources, so that more practical perspectives can also be taken into consideration, as the software engineering industry is in constant evolution, and new practices, tools and frameworks are frequently adopted by teams in this industry \parencite{Garousi2019}. The \gls{mlr} aims to capture insights that may not still be presented in academic publications (and, therefore, that might have not been captured by the previous \gls{slr}), thus providing a more well-rounded view of the relationship between \gls{re} and \gls{td} and what are the practices utilized in the real world to handle this subject. Another goal of this MLR was to also provide better comprehension on how the industry currently defines technical debt and how requirements engineering processes have been adapted over time to better tackle technical debt management.
+\noindent In addition to the \gls{slr}, a \gls{mlr} was also conducted, complementing the findings previously obtained from academic literature with grey literature sources, so that more practical perspectives can also be taken into consideration, as the software engineering industry is in constant evolution, and new practices, tools and frameworks are frequently adopted by teams in this industry \parencite{Garousi2019}. The \gls{mlr} aims to capture insights that may not still be presented in academic publications (and, therefore, that might have not been captured by the previous \gls{slr}), thus providing a more well-rounded view of the relationship between \gls{re} and \gls{td} and what are the practices utilized in the real world to handle this subject. Another goal of this MLR was to also provide better comprehension on how the industry currently defines \gls{td} and how requirements engineering processes have been adapted over time to better tackle \gls{td} management.
 In order to conduct the \gls{mlr}, the search string was tweaked, so that it matches the exact goal of this literature review - represented on \tabref{tab:mlr_search_string}. Pieces of grey literature were also filtered by selection criteria previously defined, displayed in \tabref{tab:mlr_filters}.
 
 \begin{table}[htbp]
@@ -540,7 +583,6 @@ In order to conduct the \gls{mlr}, the search string was tweaked, so that it mat
     \caption{MLR Search string}
     \label{tab:mlr_search_string}
 \end{table}
-TODO: Fix search string for MLR and yield result!
 
 \begin{table}[htbp]
     \centering
@@ -549,9 +591,11 @@ TODO: Fix search string for MLR and yield result!
         \rowcolor{gray!30}
         ID & Filter \\
         \hline
-        1 & Must be relevant for te study research \\
+        1 & Must be relevant for the study research \\
         \hline
         2 & English \\
+        \hline
+        3 & Source must be trusted \\
         \hline
     \end{tabular}
     \caption{Search Filters}

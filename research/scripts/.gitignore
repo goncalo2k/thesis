@@ -2,4 +2,5 @@
 go.mod
 go.sum
 contacts.csv
-contacts_sent.csv
+*zotero_files
+zotero-downloader

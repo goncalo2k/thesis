@@ -261,24 +261,19 @@
       \keyw{dsr}
     \endentry
     \entry{Costa2016}{inbook}{}{}
-      \name{author}{3}{}{%
-        {{un=0,uniquepart=base,hash=5b24414b348a3cbd6321896809b2b25e}{%
-           family={Eric},
-           familyi={E\bibinitperiod},
-           given={Costa},
-           giveni={C\bibinitperiod},
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=ebd54062a432036c7c751e148f75a4f3}{%
+           family={Costa},
+           familyi={C\bibinitperiod},
+           given={E.},
+           giveni={E\bibinitperiod},
            givenun=0}}%
-        {{un=0,uniquepart=base,hash=2fab63a55f232b04e6d13b6d5f8f669d}{%
-           family={Soares},
-           familyi={S\bibinitperiod},
-           given={António\bibnamedelima Lucas},
-           giveni={A\bibinitperiod\bibinitdelim L\bibinitperiod},
+        {{un=0,uniquepart=base,hash=14a7035c765fc04a159e9bd5f0e88656}{%
+           family={A.\bibnamedelimi L.\bibnamedelimi Soares},
+           familyi={A\bibinitperiod\bibinitdelim L\bibinitperiod\bibinitdelim S\bibinitperiod},
+           given={and\bibnamedelimb J.\bibnamedelimi P.\bibnamedelimi de\bibnamedelima Sousa},
+           giveni={a\bibinitperiod\bibinitdelim J\bibinitperiod\bibinitdelim P\bibinitperiod\bibinitdelim d\bibinitperiod\bibinitdelim S\bibinitperiod},
            givenun=0}}%
-        {{un=0,uniquepart=base,hash=2d702d979035183132f6b9447790b54b}{%
-           family={Sousa\bibnamedelimb Jorge\bibnamedelima Pinho},
-           familyi={S\bibinitperiod\bibinitdelim J\bibinitperiod\bibinitdelim P\bibinitperiod},
-           prefix={de},
-           prefixi={d\bibinitperiod}}}%
       }
       \name{editor}{3}{}{%
         {{hash=e391d1e94622d64e354d66cd1e05d7a9}{%
@@ -303,20 +298,20 @@
       \list{publisher}{1}{%
         {Springer International Publishing}%
       }
-      \strng{namehash}{b96a7ba5311d5ceedcc127c5328cdc3c}
-      \strng{fullhash}{6ca1d8e32a288d247b1c9b50bbdaf58b}
-      \strng{fullhashraw}{6ca1d8e32a288d247b1c9b50bbdaf58b}
-      \strng{bibnamehash}{6ca1d8e32a288d247b1c9b50bbdaf58b}
-      \strng{authorbibnamehash}{6ca1d8e32a288d247b1c9b50bbdaf58b}
-      \strng{authornamehash}{b96a7ba5311d5ceedcc127c5328cdc3c}
-      \strng{authorfullhash}{6ca1d8e32a288d247b1c9b50bbdaf58b}
-      \strng{authorfullhashraw}{6ca1d8e32a288d247b1c9b50bbdaf58b}
+      \strng{namehash}{c245f1b79a57e9ce44c78a1e88e815fd}
+      \strng{fullhash}{c245f1b79a57e9ce44c78a1e88e815fd}
+      \strng{fullhashraw}{c245f1b79a57e9ce44c78a1e88e815fd}
+      \strng{bibnamehash}{c245f1b79a57e9ce44c78a1e88e815fd}
+      \strng{authorbibnamehash}{c245f1b79a57e9ce44c78a1e88e815fd}
+      \strng{authornamehash}{c245f1b79a57e9ce44c78a1e88e815fd}
+      \strng{authorfullhash}{c245f1b79a57e9ce44c78a1e88e815fd}
+      \strng{authorfullhashraw}{c245f1b79a57e9ce44c78a1e88e815fd}
       \strng{editorbibnamehash}{85e2d1cd9641187c6a0e2354eaa66d11}
       \strng{editornamehash}{b44f4fcaa252f75be521596721b00a01}
       \strng{editorfullhash}{85e2d1cd9641187c6a0e2354eaa66d11}
       \strng{editorfullhashraw}{85e2d1cd9641187c6a0e2354eaa66d11}
-      \field{sortinit}{E}
-      \field{sortinithash}{8da8a182d344d5b9047633dfc0cc9131}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{}
       \true{uniqueprimaryauthor}
@@ -966,6 +961,44 @@
       \verb{doi}
       \verb 10.1016/j.jss.2022.111483
       \endverb
+    \endentry
+    \entry{Nabukenya2012}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=9309a4dd99e2a88e22a7978a8aba7262}{%
+           family={Nabukenya},
+           familyi={N\bibinitperiod},
+           given={Josephine},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{9309a4dd99e2a88e22a7978a8aba7262}
+      \strng{fullhash}{9309a4dd99e2a88e22a7978a8aba7262}
+      \strng{fullhashraw}{9309a4dd99e2a88e22a7978a8aba7262}
+      \strng{bibnamehash}{9309a4dd99e2a88e22a7978a8aba7262}
+      \strng{authorbibnamehash}{9309a4dd99e2a88e22a7978a8aba7262}
+      \strng{authornamehash}{9309a4dd99e2a88e22a7978a8aba7262}
+      \strng{authorfullhash}{9309a4dd99e2a88e22a7978a8aba7262}
+      \strng{authorfullhashraw}{9309a4dd99e2a88e22a7978a8aba7262}
+      \field{sortinit}{N}
+      \field{sortinithash}{22369a73d5f88983a108b63f07f37084}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{11}
+      \field{title}{Combining Case Study, Design Science and Action Research Methods for Effective Collaboration Engineering Research Efforts}
+      \field{year}{2012}
+      \field{dateera}{ce}
+      \field{pages}{343\bibrangedash 352}
+      \range{pages}{10}
+      \verb{doi}
+      \verb 10.1109/HICSS.2012.162
+      \endverb
+      \verb{file}
+      \verb PDF:/Users/goncalomiranda/Zotero/storage/9DQVUSET/Combining_Case_Study_Design_Science_and_Action_Research_Methods_for_Effective_Collaboration_Engineering_Research_Efforts.pdf:application/pdf
+      \endverb
+      \keyw{case study,dsr}
     \endentry
     \entry{Nayebi2019}{article}{}{}
       \name{author}{7}{}{%
@@ -2305,24 +2338,19 @@
       \keyw{dsr}
     \endentry
     \entry{Costa2016}{inbook}{}{}
-      \name{author}{3}{}{%
-        {{un=0,uniquepart=base,hash=5b24414b348a3cbd6321896809b2b25e}{%
-           family={Eric},
-           familyi={E\bibinitperiod},
-           given={Costa},
-           giveni={C\bibinitperiod},
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=ebd54062a432036c7c751e148f75a4f3}{%
+           family={Costa},
+           familyi={C\bibinitperiod},
+           given={E.},
+           giveni={E\bibinitperiod},
            givenun=0}}%
-        {{un=0,uniquepart=base,hash=2fab63a55f232b04e6d13b6d5f8f669d}{%
-           family={Soares},
-           familyi={S\bibinitperiod},
-           given={António\bibnamedelima Lucas},
-           giveni={A\bibinitperiod\bibinitdelim L\bibinitperiod},
+        {{un=0,uniquepart=base,hash=14a7035c765fc04a159e9bd5f0e88656}{%
+           family={A.\bibnamedelimi L.\bibnamedelimi Soares},
+           familyi={A\bibinitperiod\bibinitdelim L\bibinitperiod\bibinitdelim S\bibinitperiod},
+           given={and\bibnamedelimb J.\bibnamedelimi P.\bibnamedelimi de\bibnamedelima Sousa},
+           giveni={a\bibinitperiod\bibinitdelim J\bibinitperiod\bibinitdelim P\bibinitperiod\bibinitdelim d\bibinitperiod\bibinitdelim S\bibinitperiod},
            givenun=0}}%
-        {{un=0,uniquepart=base,hash=2d702d979035183132f6b9447790b54b}{%
-           family={Sousa\bibnamedelimb Jorge\bibnamedelima Pinho},
-           familyi={S\bibinitperiod\bibinitdelim J\bibinitperiod\bibinitdelim P\bibinitperiod},
-           prefix={de},
-           prefixi={d\bibinitperiod}}}%
       }
       \name{editor}{3}{}{%
         {{hash=e391d1e94622d64e354d66cd1e05d7a9}{%
@@ -2347,20 +2375,20 @@
       \list{publisher}{1}{%
         {Springer International Publishing}%
       }
-      \strng{namehash}{b96a7ba5311d5ceedcc127c5328cdc3c}
-      \strng{fullhash}{6ca1d8e32a288d247b1c9b50bbdaf58b}
-      \strng{fullhashraw}{6ca1d8e32a288d247b1c9b50bbdaf58b}
-      \strng{bibnamehash}{6ca1d8e32a288d247b1c9b50bbdaf58b}
-      \strng{authorbibnamehash}{6ca1d8e32a288d247b1c9b50bbdaf58b}
-      \strng{authornamehash}{b96a7ba5311d5ceedcc127c5328cdc3c}
-      \strng{authorfullhash}{6ca1d8e32a288d247b1c9b50bbdaf58b}
-      \strng{authorfullhashraw}{6ca1d8e32a288d247b1c9b50bbdaf58b}
+      \strng{namehash}{c245f1b79a57e9ce44c78a1e88e815fd}
+      \strng{fullhash}{c245f1b79a57e9ce44c78a1e88e815fd}
+      \strng{fullhashraw}{c245f1b79a57e9ce44c78a1e88e815fd}
+      \strng{bibnamehash}{c245f1b79a57e9ce44c78a1e88e815fd}
+      \strng{authorbibnamehash}{c245f1b79a57e9ce44c78a1e88e815fd}
+      \strng{authornamehash}{c245f1b79a57e9ce44c78a1e88e815fd}
+      \strng{authorfullhash}{c245f1b79a57e9ce44c78a1e88e815fd}
+      \strng{authorfullhashraw}{c245f1b79a57e9ce44c78a1e88e815fd}
       \strng{editorbibnamehash}{85e2d1cd9641187c6a0e2354eaa66d11}
       \strng{editornamehash}{b44f4fcaa252f75be521596721b00a01}
       \strng{editorfullhash}{85e2d1cd9641187c6a0e2354eaa66d11}
       \strng{editorfullhashraw}{85e2d1cd9641187c6a0e2354eaa66d11}
-      \field{sortinit}{E}
-      \field{sortinithash}{8da8a182d344d5b9047633dfc0cc9131}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{}
       \true{uniqueprimaryauthor}
@@ -3010,6 +3038,44 @@
       \verb{doi}
       \verb 10.1016/j.jss.2022.111483
       \endverb
+    \endentry
+    \entry{Nabukenya2012}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=9309a4dd99e2a88e22a7978a8aba7262}{%
+           family={Nabukenya},
+           familyi={N\bibinitperiod},
+           given={Josephine},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{9309a4dd99e2a88e22a7978a8aba7262}
+      \strng{fullhash}{9309a4dd99e2a88e22a7978a8aba7262}
+      \strng{fullhashraw}{9309a4dd99e2a88e22a7978a8aba7262}
+      \strng{bibnamehash}{9309a4dd99e2a88e22a7978a8aba7262}
+      \strng{authorbibnamehash}{9309a4dd99e2a88e22a7978a8aba7262}
+      \strng{authornamehash}{9309a4dd99e2a88e22a7978a8aba7262}
+      \strng{authorfullhash}{9309a4dd99e2a88e22a7978a8aba7262}
+      \strng{authorfullhashraw}{9309a4dd99e2a88e22a7978a8aba7262}
+      \field{sortinit}{N}
+      \field{sortinithash}{22369a73d5f88983a108b63f07f37084}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{11}
+      \field{title}{Combining Case Study, Design Science and Action Research Methods for Effective Collaboration Engineering Research Efforts}
+      \field{year}{2012}
+      \field{dateera}{ce}
+      \field{pages}{343\bibrangedash 352}
+      \range{pages}{10}
+      \verb{doi}
+      \verb 10.1109/HICSS.2012.162
+      \endverb
+      \verb{file}
+      \verb PDF:/Users/goncalomiranda/Zotero/storage/9DQVUSET/Combining_Case_Study_Design_Science_and_Action_Research_Methods_for_Effective_Collaboration_Engineering_Research_Efforts.pdf:application/pdf
+      \endverb
+      \keyw{case study,dsr}
     \endentry
     \entry{Nayebi2019}{article}{}{}
       \name{author}{7}{}{%
