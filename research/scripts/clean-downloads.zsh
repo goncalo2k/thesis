@@ -25,24 +25,30 @@ if [[ ! -d "$OUTPUT_DIR" ]]; then
   exit 0
 fi
 
-FILE_COUNT=$(find "$OUTPUT_DIR" -maxdepth 1 -type f | wc -l)
+# Count all files and folders (including subdirectories)
+FILE_COUNT=$(find "$OUTPUT_DIR" -type f | wc -l)
+DIR_COUNT=$(find "$OUTPUT_DIR" -mindepth 1 -type d | wc -l)
+TOTAL_COUNT=$((FILE_COUNT + DIR_COUNT))
 
-if [[ $FILE_COUNT -eq 0 ]]; then
+if [[ $TOTAL_COUNT -eq 0 ]]; then
   echo "${GREEN}✅ $OUTPUT_DIR is already empty${NC}"
   exit 0
 fi
 
 echo "${BLUE}Directory: $OUTPUT_DIR${NC}"
 echo "${BLUE}Files to delete: $FILE_COUNT${NC}"
+echo "${BLUE}Folders to delete: $DIR_COUNT${NC}"
+echo "${BLUE}Total items: $TOTAL_COUNT${NC}"
 echo ""
 echo "${YELLOW}Are you sure? (y/N)${NC}"
 
 read -q REPLY
 
 if [[ $REPLY == "y" ]]; then
-  rm -f "$OUTPUT_DIR"/*
+  # Remove all contents (files and folders) but keep the main directory
+  rm -rf "$OUTPUT_DIR"/*
   echo ""
-  echo "${GREEN}✅ Cleaned up $FILE_COUNT file(s) from $OUTPUT_DIR${NC}"
+  echo "${GREEN}✅ Cleaned up $TOTAL_COUNT item(s) from $OUTPUT_DIR${NC}"
 else
   echo ""
   echo "${YELLOW}Cancelled.${NC}"
