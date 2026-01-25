@@ -188,11 +188,11 @@ In order to tackle this gap, this research combines a Systematic Literature Revi
 \newacronym[description={Technical Debt}]{td}{TD}{technical debt}
 \newacronym[description={Requirements-related Technical Debt}]{rtd}{RTD}{requirements-related technical debt}
 \newacronym[description={Software Quality}]{sq}{SQ}{software quality}
-\newacronym[description=Non-Functional Requirements]{nfr}{NFRs}{non-functional requirements}
-\newacronym[description=Functional Requirements]{fr}{FRs}{functional requirements}
-\newacronym[description=Quality Attributes]{qa}{QAs}{quality attributes}
-\newacronym[description=Business Requirements]{br}{BRs}{business requirements}
-\newacronym[description=System Requirements]{sr}{SRs}{system requirements}
+\newacronym[description={Non-Functional Requirements}]{nfr}{NFRs}{non-functional requirements}
+\newacronym[description={Functional Requirements}]{fr}{FRs}{functional requirements}
+\newacronym[description={Quality Attributes}]{qa}{QAs}{quality attributes}
+\newacronym[description={Business Requirements}]{br}{BRs}{business requirements}
+\newacronym[description={System Requirements}]{sr}{SRs}{system requirements}
 \newacronym{satd}{SATD}{Self-Admitted Technical Debt}
 \newacronym{dsr}{DSR}{Design Science Research}
 \newacronym{csr}{CSR}{Case Study Research}
@@ -228,35 +228,35 @@ downstream debt, linking foundational definitions to the phenomena explored in t
 \section{Requirements and Types of Requirements}
 \noindent In software engineering, requirements constitute the primary means by which stakeholder intent is transformed 
 into explicit expectations for a software system, guiding both implementation decisions and quality objectives 
-\parencite{Femmer2019, Behutiye2020}. Rather 
+\parencite{Femmer2019, Behutiye2019}. Rather 
 than being merely a technical specification artifact, requirements operate at the intersection of business concerns and 
 technical realization, bridging communication between organizational stakeholders and development teams 
 \parencite{Femmer2019, Rios2019}. 
 
 From a conceptual perspective, requirements can be viewed along two complementary dimensions. The first distinguishes 
-\gls{br}, from \gls{sr} \parencite{Behutiye2020, Melo2022}. The second dimension differentiates between \gls{fr} and 
+\gls{br}, from \gls{sr} \parencite{Behutiye2019, Melo2022}. The second dimension differentiates between \gls{fr} and 
 \gls{nfr} \parencite{Femmer2019, Behutiye2022}.
 
 For the purposes of this study, \gls{fr} and \gls{nfr} are treated as the two primary categories of requirements, 
-while acknowledging that both may originate at either the business or system level \parencite{Behutiye2020}. This 
+while acknowledging that both may originate at either the business or system level \parencite{Behutiye2019}. This 
 perspective supports a unified view of \gls{re}, in which both value-oriented concerns and technical constraints are 
 considered \parencite{Femmer2019}, and provides a foundation for analyzing how deficiencies in requirement quality 
 contribute to the emergence and accumulation of \gls{td} \parencite{Rios2019, Melo2022}.
 
 \subsection{Quality Attributes and Quality Requirements}
 \noindent \gls{qa} describe the non-functional characteristics that determine how a software system performs, evolves, and 
-sustains value over time. Commonly cited quality attributes include performance, reliability, security, maintainability, usability, 
+sustains value over time. Commonly cited \gls{qa} include performance, reliability, security, maintainability, usability, 
 and scalability, among others. In \gls{re}, these attributes are typically captured through \gls{nfr} or, more specifically, 
 through \gls{qr}, which constrain and shape the realization of functional behavior \parencite{Femmer2019, Behutiye2022}.
 
-Unlike \gls{fr}, which define discrete system capabilities, quality attributes are inherently cross-cutting and often 
+Unlike \gls{fr}, which define discrete system capabilities, \gls{qa} are inherently cross-cutting and often 
 span multiple system components and development activities. As a result, they are more difficult to specify, validate, 
-and prioritize, particularly in AGILE and iterative development contexts \parencite{Behutiye2020}. When quality 
+and prioritize, particularly in AGILE and iterative development contexts \parencite{Behutiye2019}. When quality 
 attributes are insufficiently specified, deferred, or implicitly assumed, their realization is frequently postponed 
 to later development stages, increasing the likelihood of architectural erosion, rework, and the accumulation of \gls{td} 
 \parencite{Rios2019, Melo2022}.
 
-For this reason, quality attributes play a central role in this study’s analysis of requirement quality. Their treatment 
+For this reason, \gls{qa} play a central role in this study’s analysis of requirement quality. Their treatment 
 provides an essential lens for understanding how shortcomings in requirements engineering practices translate into 
 long-term software quality degradation and requirements-related technical debt.
 
@@ -387,7 +387,6 @@ How is the quality of business and system requirements related to technical debt
 
 \subsubsection{Study Selection}
 \noindent For this study, 7 filters where used to thin down the search result, listed on \tabref{tab:filters}.
-\clearpage
 \begin{table}[htbp]
     \centering
     \begin{tabular}{|c|c|}
@@ -531,9 +530,7 @@ S5, S7, S8, S9, S10, S11, S12, S14, S15, S16, S17, S24, S27, S38, S43, S50, S60,
 \end{tabular}}
 \end{table}
 
-
-\clearpage
-\noindent However, it was also possible to identify several recurring themes regarding the role of requirements gathering and its connection to \gls{td} and \gls{sq}. These were then grouped into four main topics: the Relation of \gls{re} with \gls{sq} and \gls{td}, the Requirement Volatility and Incompleteness as Debt Factors, the AGILE, Startups, and Fast-Paced Development Environments, and the Documentation, Traceability, and \gls{nfr}. Table\ref{tab:main_topics} displays both the number of studies that address each one of the previously mentioned topics and their respective references. 
+\noindent However, it was also possible to identify several recurring themes regarding the role of requirements gathering and its connection to \gls{td} and \gls{sq}. These were then grouped into four main topics: the Relation of \gls{re} with \gls{sq} and \gls{td}, the Requirement Volatility and Incompleteness as Debt Factors, the AGILE, Startups, and Fast-Paced Development Environments, and the Documentation, Traceability, and \gls{nfr}. \tabref{tab:main_topics} displays both the number of studies that address each one of the previously mentioned topics and their respective references. 
 
 \begin{table}[htbp]
 \centering
