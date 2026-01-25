@@ -1,0 +1,89 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36 Edg/144.0.0.0" version="29.2.9">
+  <diagram name="Page-1" id="-AGr7OxxxhJzHp9d7Zh9">
+    <mxGraphModel dx="670" dy="484" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="vLUZvKS9-NxXQeDW1NrP-4" edge="1" parent="1" source="vLUZvKS9-NxXQeDW1NrP-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="vLUZvKS9-NxXQeDW1NrP-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vLUZvKS9-NxXQeDW1NrP-1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;Documents identfied through default database search&amp;nbsp;&lt;/font&gt;&lt;span style=&quot;font-size: 10px; background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;(n=3111&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); font-size: 10px;&quot;&gt;)&lt;/span&gt;" vertex="1">
+          <mxGeometry height="70" width="140" x="150" y="130" as="geometry" />
+        </mxCell>
+        <mxCell id="vLUZvKS9-NxXQeDW1NrP-18" edge="1" parent="1" source="vLUZvKS9-NxXQeDW1NrP-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="vLUZvKS9-NxXQeDW1NrP-14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vLUZvKS9-NxXQeDW1NrP-2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;Articles included for having selected keywords in title, abstract or keywords&amp;nbsp;&lt;/font&gt;&lt;span style=&quot;color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); background-color: transparent; font-size: 10px;&quot;&gt;(n=452)&lt;/span&gt;" vertex="1">
+          <mxGeometry height="70" width="140" x="150" y="250" as="geometry" />
+        </mxCell>
+        <mxCell id="vLUZvKS9-NxXQeDW1NrP-12" edge="1" parent="1" source="vLUZvKS9-NxXQeDW1NrP-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=classic;startFill=1;endArrow=none;endFill=0;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="220" y="225" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="vLUZvKS9-NxXQeDW1NrP-3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;Articles excluded for not having selected keywords in title, abstract or keywords&amp;nbsp;&lt;/font&gt;&lt;span style=&quot;font-size: 10px; background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;(n=2659)&lt;/span&gt;" vertex="1">
+          <mxGeometry height="70" width="140" x="320" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="vLUZvKS9-NxXQeDW1NrP-13" edge="1" parent="1" source="vLUZvKS9-NxXQeDW1NrP-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="vLUZvKS9-NxXQeDW1NrP-15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vLUZvKS9-NxXQeDW1NrP-14" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;Articles included for being published from 2018 onwards&amp;nbsp;&lt;/font&gt;&lt;span style=&quot;color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); background-color: transparent; font-size: 10px;&quot;&gt;(n=364)&lt;/span&gt;" vertex="1">
+          <mxGeometry height="70" width="140" x="150" y="380" as="geometry" />
+        </mxCell>
+        <mxCell id="vLUZvKS9-NxXQeDW1NrP-24" edge="1" parent="1" source="vLUZvKS9-NxXQeDW1NrP-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="vLUZvKS9-NxXQeDW1NrP-20">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vLUZvKS9-NxXQeDW1NrP-15" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;Articles included for being written in English&amp;nbsp;&lt;/font&gt;&lt;span style=&quot;color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); background-color: transparent; font-size: 10px;&quot;&gt;(n=359)&lt;/span&gt;" vertex="1">
+          <mxGeometry height="70" width="140" x="150" y="500" as="geometry" />
+        </mxCell>
+        <mxCell id="vLUZvKS9-NxXQeDW1NrP-16" edge="1" parent="1" source="vLUZvKS9-NxXQeDW1NrP-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=classic;startFill=1;endArrow=none;endFill=0;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="220" y="475" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="vLUZvKS9-NxXQeDW1NrP-17" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;Articles excluded for not being written in English&amp;nbsp;&lt;/font&gt;&lt;span style=&quot;color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); background-color: transparent; font-size: 10px;&quot;&gt;(n=5)&lt;/span&gt;" vertex="1">
+          <mxGeometry height="70" width="140" x="320" y="440" as="geometry" />
+        </mxCell>
+        <mxCell id="vLUZvKS9-NxXQeDW1NrP-19" edge="1" parent="1" source="vLUZvKS9-NxXQeDW1NrP-20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="vLUZvKS9-NxXQeDW1NrP-21">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vLUZvKS9-NxXQeDW1NrP-20" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;Articles included for being articles, conference papes, short papers, book chapters, reviews and conference reviews&amp;nbsp;&lt;/font&gt;&lt;span style=&quot;color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); background-color: transparent; font-size: 10px;&quot;&gt;(n=356)&lt;/span&gt;" vertex="1">
+          <mxGeometry height="70" width="140" x="150" y="620" as="geometry" />
+        </mxCell>
+        <mxCell id="vLUZvKS9-NxXQeDW1NrP-30" edge="1" parent="1" source="vLUZvKS9-NxXQeDW1NrP-21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="vLUZvKS9-NxXQeDW1NrP-26">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vLUZvKS9-NxXQeDW1NrP-21" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;Articles included for meeting quality criteria&amp;nbsp;&lt;/font&gt;&lt;span style=&quot;color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); background-color: transparent; font-size: 10px;&quot;&gt;(n=64)&lt;/span&gt;" vertex="1">
+          <mxGeometry height="70" width="140" x="150" y="740" as="geometry" />
+        </mxCell>
+        <mxCell id="vLUZvKS9-NxXQeDW1NrP-22" edge="1" parent="1" source="vLUZvKS9-NxXQeDW1NrP-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=classic;startFill=1;endArrow=none;endFill=0;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="220" y="715" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="vLUZvKS9-NxXQeDW1NrP-23" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;Articles excluded for not meeting quality criteria&amp;nbsp;&lt;/font&gt;&lt;span style=&quot;color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); background-color: transparent; font-size: 10px;&quot;&gt;(n=292)&lt;/span&gt;" vertex="1">
+          <mxGeometry height="70" width="140" x="320" y="680" as="geometry" />
+        </mxCell>
+        <mxCell id="vLUZvKS9-NxXQeDW1NrP-26" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;Articles included from Backward Snowballing Search&amp;nbsp;&lt;/font&gt;&lt;span style=&quot;color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); background-color: transparent; font-size: 10px;&quot;&gt;(n=69)&lt;/span&gt;" vertex="1">
+          <mxGeometry height="70" width="140" x="150" y="860" as="geometry" />
+        </mxCell>
+        <mxCell id="vLUZvKS9-NxXQeDW1NrP-31" edge="1" parent="1" source="vLUZvKS9-NxXQeDW1NrP-32" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=classic;startFill=1;endArrow=none;endFill=0;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="220" y="595" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="vLUZvKS9-NxXQeDW1NrP-32" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;Articles included for not being articles, conference papes, short papers, book chapters, reviews and conference reviews&amp;nbsp;&lt;/font&gt;&lt;span style=&quot;color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); background-color: transparent; font-size: 10px;&quot;&gt;(n=3)&lt;/span&gt;" vertex="1">
+          <mxGeometry height="70" width="140" x="320" y="560" as="geometry" />
+        </mxCell>
+        <mxCell id="vLUZvKS9-NxXQeDW1NrP-33" edge="1" parent="1" source="vLUZvKS9-NxXQeDW1NrP-34" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=classic;startFill=1;endArrow=none;endFill=0;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="220" y="355" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="vLUZvKS9-NxXQeDW1NrP-34" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;Articles excluded for being published before 2018 &lt;/font&gt;&lt;span style=&quot;color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); background-color: transparent; font-size: 10px;&quot;&gt;(n=88)&lt;/span&gt;" vertex="1">
+          <mxGeometry height="70" width="140" x="320" y="320" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

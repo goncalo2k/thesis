@@ -190,6 +190,9 @@ In order to tackle this gap, this research combines a Systematic Literature Revi
 \newacronym[description={Software Quality}]{sq}{SQ}{software quality}
 \newacronym[description=Non-Functional Requirements]{nfr}{NFRs}{non-functional requirements}
 \newacronym[description=Functional Requirements]{fr}{FRs}{functional requirements}
+\newacronym[description=Quality Attributes]{qa}{QAs}{quality attributes}
+\newacronym[description=Business Requirements]{br}{BRs}{business requirements}
+\newacronym[description=System Requirements]{sr}{SRs}{system requirements}
 \newacronym{satd}{SATD}{Self-Admitted Technical Debt}
 \newacronym{dsr}{DSR}{Design Science Research}
 \newacronym{csr}{CSR}{Case Study Research}
@@ -214,7 +217,117 @@ Research in \gls{rtd} - which is one of the most common types of \gls{td}, accor
 The risk introduced by poor \gls{re} is particularly alarming in organizations that rely on swiftly composed or distributed teams. Due to this, this study aims to explore the influence of requirement gathering practices on the accumulation of \gls{td} and the quality of software outputs, while exploring what are the most common causes of \gls{rtd} and how they can be identified and correctly mitigated in a real world environment. 
 
 \chapter{Theoretical Background}
-TODO
+
+\noindent This chapter introduces the core theoretical concepts required to frame the relationship between \gls{re} 
+practices and the emergence, accumulation, and management of \gls{td}, with a particular emphasis on \gls{rtd}. It 
+clarifies what is meant by requirements (and their main categories), how \gls{re} is commonly understood in 
+contemporary software development contexts, and how \gls{td} is conceptualized in the literature, including its different 
+types and mechanisms of propagation. The chapter concludes by positioning requirements quality as an upstream driver of 
+downstream debt, linking foundational definitions to the phenomena explored in the \gls{slr}.
+
+\section{Requirements and Types of Requirements}
+\noindent In software engineering, requirements constitute the primary means by which stakeholder intent is transformed 
+into explicit expectations for a software system, guiding both implementation decisions and quality objectives 
+\parencite{Femmer2019, Behutiye2020}. Rather 
+than being merely a technical specification artifact, requirements operate at the intersection of business concerns and 
+technical realization, bridging communication between organizational stakeholders and development teams 
+\parencite{Femmer2019, Rios2019}. 
+
+From a conceptual perspective, requirements can be viewed along two complementary dimensions. The first distinguishes 
+\gls{br}, from \gls{sr} \parencite{Behutiye2020, Melo2022}. The second dimension differentiates between \gls{fr} and 
+\gls{nfr} \parencite{Femmer2019, Behutiye2022}.
+
+For the purposes of this study, \gls{fr} and \gls{nfr} are treated as the two primary categories of requirements, 
+while acknowledging that both may originate at either the business or system level \parencite{Behutiye2020}. This 
+perspective supports a unified view of \gls{re}, in which both value-oriented concerns and technical constraints are 
+considered \parencite{Femmer2019}, and provides a foundation for analyzing how deficiencies in requirement quality 
+contribute to the emergence and accumulation of \gls{td} \parencite{Rios2019, Melo2022}.
+
+\subsection{Quality Attributes and Quality Requirements}
+\noindent \gls{qa} describe the non-functional characteristics that determine how a software system performs, evolves, and 
+sustains value over time. Commonly cited quality attributes include performance, reliability, security, maintainability, usability, 
+and scalability, among others. In \gls{re}, these attributes are typically captured through \gls{nfr} or, more specifically, 
+through \gls{qr}, which constrain and shape the realization of functional behavior \parencite{Femmer2019, Behutiye2022}.
+
+Unlike \gls{fr}, which define discrete system capabilities, quality attributes are inherently cross-cutting and often 
+span multiple system components and development activities. As a result, they are more difficult to specify, validate, 
+and prioritize, particularly in AGILE and iterative development contexts \parencite{Behutiye2020}. When quality 
+attributes are insufficiently specified, deferred, or implicitly assumed, their realization is frequently postponed 
+to later development stages, increasing the likelihood of architectural erosion, rework, and the accumulation of \gls{td} 
+\parencite{Rios2019, Melo2022}.
+
+For this reason, quality attributes play a central role in this study’s analysis of requirement quality. Their treatment 
+provides an essential lens for understanding how shortcomings in requirements engineering practices translate into 
+long-term software quality degradation and requirements-related technical debt.
+
+\subsection{Business and System Requirements}
+\noindent In addition to the commonly adopted distinction between \gls{fr} and \gls{nfr}, current literature implicitly 
+recognizes a layered view of requirements based on their level of abstraction and purpose. In this view, requirements can 
+be broadly categorized as \gls{br} and \gls{sr}. This categorization is particularly relevant in the context of \gls{re}, 
+as decisions and omissions at both levels can independently or collectively contribute to the accumulation of \gls{rtd} 
+\parencite{Melo2022,Lenarduzzi2019}.
+
+\gls{br} capture the high-level goals, constraints, and value propositions that motivate the development of a software 
+system. They express stakeholders expectations regarding the system, framing success in terms of organizational objectives, 
+user needs, and strategic outcomes. Within AGILE and industrial development contexts, \gls{br} are frequently gathered 
+through stakeholder interaction, informal documentation, and evolving prioritization mechanisms such as backlogs or 
+roadmaps \parencite{Gralha2018,Behutiye2022}. When \gls{br} are unclear, unstable, or weakly aligned across stakeholders, 
+they create uncertainty that propagates downstream, increasing the likelihood of misaligned implementations and 
+corrective rework \parencite{Seyff2018,Melo2022}.
+
+\gls{sr} operationalize business intent by specifying how the software system should behave and which constraints it must 
+satisfy. They translate business goals into concrete, verifiable expectations that guide architecture, design, 
+implementation, and testing activities. In the reviewed literature, \gls{sr} are closely associated with both \gls{fr} and 
+\gls{nfr}, as they define not only system functionality but also \gls{qa} such as performance, security, 
+reliability, and maintainability \parencite{Behutiye2019,Alenazi2025c}. Deficiencies at this level—such as incomplete 
+specifications, undocumented assumptions, or insufficient consideration of \gls{qr}—often force development teams to make 
+implicit decisions, which are a well-documented source of \gls{td} \parencite{Melo2022,Scott2025}.
+
+\gls{br} and \gls{sr} are therefore understood as complementary layers within \gls{re}. Together, they establish the context 
+and constraints under which technical decisions are made. \parencite{Femmer2019,Behutiye2022}.
+
+\subsection{Functional and Non-Functional Requirements}
+\noindent Software requirements capture both the intended functionality of a system and the quality constraints that 
+shape its behavior and long-term evolution. These dimensions are, however, not independent, as decisions made at the 
+level of the functional scope often entail architectural, organizational, and coordination-related consequences, 
+particularly in AGILE and large-scale development contexts \parencite{Herath2025b,Herath2025}. Similarly, 
+non-functional constraints such as maintainability, security, and performance directly influence how functionality can 
+be implemented, evolved, and sustained over time, and when left implicit or under-specified, they frequently manifest 
+as long-term \gls{td} \parencite{Borg2025}. Current literature shows that in iterative development settings, the way 
+\gls{fr} and \gls{nfr} are specified, prioritized, and refined plays a central role in determining \gls{sq} outcomes and 
+the accumulation of \gls{td}, as feature-driven prioritization often defers quality concerns unless they are explicitly 
+embedded in the requirements process \parencite{Herath2025b,Borg2025}. For this reason, \gls{fr} and 
+\gls{nfr} are treated in this work as complementary components of the requirements landscape, whose combined management 
+is essential for mitigating \gls{td} and improving long-term \gls{sq}.
+
+\gls{fr} express what the system should do, typically describing services, behaviors, and interactions. Within AGILE 
+and iterative contexts, \gls{fr} are frequently captured as backlog items, user stories, or incrementally refined 
+specifications, and tend to be prioritized due to their immediate visibility and their direct relation to delivered 
+functionality \parencite{Behutiye2019,Behutiye2022}. While this prioritization supports short-term delivery, it also 
+produces an imbalance when \gls{fr} evolve without corresponding updates to architectural assumptions, documentation, 
+or verification assets, increasing the likelihood of debt accumulation \parencite{Rios2019,Melo2022}.
+
+\gls{nfr} describe how the system should behave and which \gls{qa} it must satisfy, such as performance, security, 
+reliability, maintainability, and usability. Current literature often discuesses \gls{nfr} in close association with 
+the notion of \gls{qr}, reflecting their role in constraining design decisions and shaping long-term system properties 
+\parencite{Behutiye2019,Behutiye2022}. Empirical evidence indicates that \gls{qr} are frequently under-documented or 
+treated implicitly in fast-paced development environments, particularly in AGILE settings, which increases the 
+likelihood of later refactors and architectural degradation \parencite{Behutiye2022,Scott2025}.
+
+Requirements quality is not treated as an abstract ideal but as a practical determinant of downstream development and 
+usage outcomes. \textcite{Femmer2019} emphasizes that requirements quality directly influences quality-in-use, implying 
+that unclear or incomplete requirements are systematically translated into avoidable defects, refactors, and degraded 
+user and stakeholder outcomes, meaning that low-quality requirements increase the probability of negative downstream 
+effects, while high-quality requirements act as a preventive control by reducing ambiguity and support consistent 
+implementation and architectural decisions over time \parencite{Femmer2019,Melo2022}.
+
+\section{Technical Debt}
+\noindent \gls{td} is generally conceptualized as the accumulation of deferred work or suboptimal decisions that provide 
+short-term benefit but impose future cost. In AGILE software projects, \gls{td} is frequently linked to pressure-driven 
+trade-offs, incomplete knowledge, and prioritization mechanisms that favor immediate delivery \parencite{Rios2019,Besker2019}. 
+Current literature also emphasizes that \gls{td} is not limited to code-level issues: it can emerge across artifacts, 
+practices, and organizational structures, producing compounding effects on long-term maintainability and team productivity 
+\parencite{Melo2022,Herath2025b}.
 
 \chapter{Related Work}
 \section{Systematic Literature Review}
@@ -319,7 +432,7 @@ application of the filter "2018-2026," that reduced the number of studies to be 
         \hline
         ACM Digital Library & 1 054 & 197 & 175 & 175 & 174 & 26 & 25 & 26 \\
         \hline
-        Total & 4408 & 452 & 364 & 359 & 356 & 72 & 64 & 69\\
+        Total & 3 111 & 452 & 364 & 359 & 356 & 72 & 64 & 69\\
         \hline
     \end{tabular}%
     }
@@ -609,7 +722,7 @@ technical level, contributing to socio-technical and process debt in complex
 organizational settings \parencite{Klotins2018,Herath2025,Herath2025b}. Overall, 
 the literature converges on the view that high-quality \gls{re}, characterized by 
 clarity, completeness, stakeholder alignment, and explicit consideration of 
-quality attributes, is the a primary preventive mechanism against \gls{td}, 
+\gls{qa}, is the a primary preventive mechanism against \gls{td}, 
 whereas deficiencies at the requirements level significantly increase its 
 likelihood and long-term impact.
 
