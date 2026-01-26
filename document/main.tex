@@ -21,6 +21,9 @@
 \usepackage{adjustbox}   % to scale table content
 \usepackage{afterpage}
 
+\usepackage{float}     % provides [H]
+\usepackage{placeins}  
+
 \usepackage[labelfont=normalfont,textfont=normalfont]{caption}
 \usepackage[table]{xcolor}
 \usepackage[acronym]{glossaries}
@@ -42,7 +45,7 @@
 \fancyfoot[LE,RO]{\thepage} % Esquerda nas pares, direita nas ímpares
 \setlength{\footskip}{1.25cm} % Distância ao fundo da página
 
-
+\raggedbottom
 
 % you may need to uncomment the command below if you use eps format for figures
 %\usepackage{epstopdf}
@@ -761,9 +764,10 @@ Another goal of this MLR was to also provide better comprehension on how the ind
 processes have been adapted over time to better tackle \gls{td} management. 
 
 \subsection{Conducting the Literature Review}
-In order to conduct the \gls{mlr}, the search string was tweaked, so that it is more adequate to the search engines used. This can 
+In order to conduct the \gls{mlr}, the search string was tweaked, so that it is more adequate to the search engines used. This can
 be seen on \tabref{tab:mlr_search_string}.
-\begin{table}[htbp]
+
+\begin{table}[H]
     \centering
     \begin{tabular}{|>{\columncolor{gray!30}}c|c|}
         \hline
@@ -774,9 +778,9 @@ be seen on \tabref{tab:mlr_search_string}.
     \label{tab:mlr_search_string}
 \end{table}
 
-The pieces of grey literature retrieved were filtered by the selection criteria presented on \tabref{tab:mlr_filters}. 
+The pieces of grey literature retrieved were filtered by the selection criteria presented on \tabref{tab:mlr_filters}.
 
-\begin{table}[htbp]
+\begin{table}[H]
     \centering
     \begin{tabular}{|c|c|}
         \hline
@@ -794,15 +798,17 @@ The pieces of grey literature retrieved were filtered by the selection criteria 
     \label{tab:mlr_filters}
 \end{table}
 
+\FloatBarrier % do not allow later floats to jump above this point
 
-It is important to note that, in order to mitigate the inherent risks of bias and varying quality in grey literature, this study 
-employs the AACODS (Authority, Accuracy, Coverage, Objectivity, Date, and Significance) checklist, which is described in 
-\tabref{tab:aacods_rubric}, as a formal quality assessment framework. Specifically, the 'Authority' and 'Objectivity' markers are used 
-to distinguish between evidence-based practitioner insights and purely promotional or commercial content. The application of such 
-systematic filter ensures that the multivocal synthesis is grounded in high-quality, reliable data that complements the 
+It is important to note that, in order to mitigate the inherent risks of bias and varying quality in grey literature, this study
+employs the AACODS (Authority, Accuracy, Coverage, Objectivity, Date, and Significance) checklist, which is described in
+\tabref{tab:aacods_rubric}, as a formal quality assessment framework. Specifically, the `Authority' and `Objectivity' markers are used
+to distinguish between evidence-based practitioner insights and purely promotional or commercial content. The application of such
+systematic filter ensures that the multivocal synthesis is grounded in high-quality, reliable data that complements the
 peer-reviewed academic literature.
 
-\begin{table}[htbp]
+% --- Table 9 (rubric)
+\begin{table}[H]
 \centering
 \begin{tabular}{|p{3cm}|p{11cm}|}
 \hline
@@ -843,10 +849,12 @@ Significance (S) &
 \caption{AACODS quality assessment rubric (0--2 per criterion).}
 \label{tab:aacods_rubric}
 \end{table}
-Each non-academic source is rigorously evaluated against these six criteria to ensure credibility, relevance, and methodological soundness, being the resulting assessment 
+
+Each non-academic source is rigorously evaluated against these six criteria to ensure credibility, relevance, and methodological soundness, with the resulting assessment
 and scoring for all included grey sources summarized in \tabref{tab:aacods_applied}.
 
-\begin{table}[htbp]
+% --- Table 10 (applied scoring) -- immediately after Table 9
+\begin{table}[H]
 \centering
 \caption{AACODS quality assessment applied to the selected grey literature sources (0--2 per criterion).}
 \label{tab:aacods_applied}
@@ -874,98 +882,177 @@ and scoring for all included grey sources summarized in \tabref{tab:aacods_appli
 \textbf{Total} \\
 \hline
 
-G1 &
-What is Tech Debt? Signs \& How to Effectively Manage It &
-\citeauthor{Atlassian} &
-n.d. & 2 & 2 & 2 & 1 & 1 & 2 & 10 \\
+G1 & What is Tech Debt? Signs \& How to Effectively Manage It & \citeauthor{Atlassian} & n.d. & 2 & 2 & 2 & 1 & 1 & 2 & 10 \\
 \hline
-
-G2 &
-What is Technical Debt in Software Development and How to Manage It? &
-\citeauthor{GeeksForGeeks} &
-n.d. & 1 & 1 & 2 & 1 & 1 & 2 & 8 \\
+G2 & What is Technical Debt in Software Development and How to Manage It? & \citeauthor{GeeksForGeeks} & n.d. & 1 & 1 & 2 & 1 & 1 & 2 & 8 \\
 \hline
-
-G3 &
-What Is Technical Debt: A Guide &
-\citeauthor{Coursera2024} &
-2024 & 2 & 2 & 2 & 2 & 2 & 2 & 12 \\
+G3 & What Is Technical Debt: A Guide & \citeauthor{Coursera2024} & 2024 & 2 & 2 & 2 & 2 & 2 & 2 & 12 \\
 \hline
-
-G4 &
-What is technical debt? &
-\citeauthor{Github2024} &
-2024 & 2 & 2 & 1 & 1 & 2 & 2 & 10 \\
+G4 & What is technical debt? & \citeauthor{Github2024} & 2024 & 2 & 2 & 1 & 1 & 2 & 2 & 10 \\
 \hline
-
-G5 &
-Technical Debt (Tech Debt): A Complete Guide &
-\citeauthor{Confluent} &
-n.d. & 2 & 1 & 2 & 1 & 1 & 2 & 9 \\
+G5 & Technical Debt (Tech Debt): A Complete Guide & \citeauthor{Confluent} & n.d. & 2 & 1 & 2 & 1 & 1 & 2 & 9 \\
 \hline
-
-G6 &
-What is Technical Debt? Examples, Prevention \& Best Practices &
-\citeauthor{Mendix2024} &
-2024 & 2 & 1 & 2 & 1 & 2 & 2 & 10 \\
+G6 & What is Technical Debt? Examples, Prevention \& Best Practices & \citeauthor{Mendix2024} & 2024 & 2 & 1 & 2 & 1 & 2 & 2 & 10 \\
 \hline
-
-G7 &
-Technical Debt {\textbar} Definition \& Guide &
-\citeauthor{Sonarsource} &
-n.d. & 2 & 2 & 2 & 1 & 1 & 2 & 10 \\
+G7 & Technical Debt {\textbar} Definition \& Guide & \citeauthor{Sonarsource} & n.d. & 2 & 2 & 2 & 1 & 1 & 2 & 10 \\
 \hline
-
-G8 &
-Technical Debt: How to Identify, Measure, and Manage &
-\citeauthor{Islam2024} &
-2024 & 1 & 1 & 2 & 1 & 2 & 2 & 9 \\
+G8 & Technical Debt: How to Identify, Measure, and Manage & \citeauthor{Islam2024} & 2024 & 1 & 1 & 2 & 1 & 2 & 2 & 9 \\
 \hline
-
-G9 &
-How to Measure Technical Debt in Software Development &
-\citeauthor{Jain2025} &
-2025 & 2 & 1 & 2 & 1 & 2 & 2 & 10 \\
+G9 & How to Measure Technical Debt in Software Development & \citeauthor{Jain2025} & 2025 & 2 & 1 & 2 & 1 & 2 & 2 & 10 \\
 \hline
-
-G10 &
-Technical Debt \& How To Manage It &
-\citeauthor{Mitton2023} &
-2023 & 2 & 2 & 2 & 1 & 2 & 2 & 11 \\
+G10 & Technical Debt \& How To Manage It & \citeauthor{Mitton2023} & 2023 & 2 & 2 & 2 & 1 & 2 & 2 & 11 \\
 \hline
 \end{tabular}%
 }
 \end{table}
 
-\subsection{Contribution of Grey Literature}
-The analysis of grey literature sources complements the findings of the \gls{slr} by adding a practitioner-orientedand operational perspective to the discussion of \gls{td}. 
-Across the selected sources, \gls{td} is consistently framed as a pragmatic consequence of delivery pressure, evolving requirements, and short-term prioritization, a view 
-that aligns with academic characterizations of \gls{td} as a result of conscious or implicit trade-offs made under constraints \parencite{Atlassian,Github2024,Confluent}.
-These practitioner-oriented definitions reinforce the \gls{slr} conclusion that \gls{td} is not produced at random, but rather a predictable outcome of development practices 
-that emphasize speed and flexibility over long-term quality.
+\FloatBarrier % ensure subsection 3.2.2 starts after the two AACODS tables
 
-While the \gls{slr} provides detailed explanations of how deficiencies in \gls{re}, such as volatile requirements,
-under-documented \gls{nfr}, and weak stakeholder alignment, lead to the accumulation of \gls{rtd}, grey literature tends to address \gls{td} at a more general level, 
-rarely distinguishing between requirement-related and other forms of debt. Most sources discuss \gls{td} holistically, focusing on observable symptoms and downstream 
-consequences rather than on upstream requirement quality as a root cause \parencite{GeeksForGeeks, Coursera2024, Sonarsource}. This contrast highlights the complementary 
-role of grey literature and how it reflects how \gls{td} is commonly understoodand communicated in industry, even when the underlying requirement-related mechanisms remain 
-implicit.
 
-The main contribution of grey literature lies in its emphasis on actionable management and prevention practices. Several sources explicitly highlight practical strategies 
-such as early identification of \gls{td}, prioritization alongside feature development, and the adoption of preventive best practices within development workflows 
-\parencite{Mendix2024,Mitton2023}. These recommendations resonate with the \gls{slr} findings that proactive \gls{td} management is more effective than reactive remediation, 
-while offering concrete examples of how such management is currently operationalized in industrial settings.
+\subsection{Conducting the Literature Review}
+In order to conduct the \gls{mlr}, the search string was tweaked, so that it is more adequate to the search engines used. This can
+be seen on \tabref{tab:mlr_search_string}.
 
-Additionally, the challenge of making \gls{td} visible and measurable is addressed, by discussing qualitative and quantitative approaches to identifying and tracking debt, 
-including the use of metrics, indicators, and monitoring practices aimed at supporting decision-making \parencite{Islam2024, Jain2025}. This operational focus complements 
-academic work that stresses the importance of traceability and documentation, by illustrating how organizations often rely on downstream measurement mechanisms when upstream 
-requirement artifacts are incomplete.
+\begin{table}[!htbp]
+    \centering
+    \begin{tabular}{|>{\columncolor{gray!30}}c|c|}
+        \hline
+        Search String & "Requirements" AND "Technical" AND "Debt" AND "Software" \\
+        \hline
+    \end{tabular}
+    \caption{MLR Search string}
+    \label{tab:mlr_search_string}
+\end{table}
 
-From a methodological standpoint, the application of the AACODS framework makes explicit the distinction between conceptual, educational sources and those offering more 
-specialized or practice-oriented insights. While the \gls{slr} remains the primary source of causal explanations linking \gls{re} quality to \gls{rtd}, the reviewed grey 
-literature contributes with experience-driven perspectives on tools, practices, and organizational attitudes toward \gls{td} management \parencite{Sonarsource,Confluent}. In 
-alignment with the conclusions of the \gls{slr}, this \gls{mlr} highlights the importance of high-quality \gls{re} as a preventive mechanism against \gls{td}, while also 
-demonstrating how organizations cope with the consequences of insufficient requirements through reactive and operational management strategies.
+The pieces of grey literature retrieved were filtered by the selection criteria presented on \tabref{tab:mlr_filters}.
+
+\begin{table}[!htbp]
+    \centering
+    \begin{tabular}{|c|c|}
+        \hline
+        \rowcolor{gray!30}
+        ID & Filter \\
+        \hline
+        1 & Content must be relevant for the study research \\
+        \hline
+        2 & Written in English \\
+        \hline
+        3 & Quality Assessment (QA) \\
+        \hline
+    \end{tabular}
+    \caption{Search Filters}
+    \label{tab:mlr_filters}
+\end{table}
+
+\FloatBarrier
+
+% --- keep the AACODS explanation + the two tables together (no split across pages)
+\begin{samepage}
+It is important to note that, in order to mitigate the inherent risks of bias and varying quality in grey literature, this study
+employs the AACODS (Authority, Accuracy, Coverage, Objectivity, Date, and Significance) checklist, which is described in
+\tabref{tab:aacods_rubric}, as a formal quality assessment framework. Specifically, the `Authority' and `Objectivity' markers are used
+to distinguish between evidence-based practitioner insights and purely promotional or commercial content. The application of such
+systematic filter ensures that the multivocal synthesis is grounded in high-quality, reliable data that complements the
+peer-reviewed academic literature.
+
+\begin{table}[!htbp]
+\centering
+\begin{tabular}{|p{3cm}|p{11cm}|}
+\hline
+\rowcolor{gray!30}
+\textbf{Criterion} & \textbf{Operationalization (0--2 scoring)} \\
+\hline
+Authority (A) &
+0: anonymous / unclear author or organization; \newline
+1: identifiable author/organization but limited credibility signals; \newline
+2: reputable organization or clearly accountable author/editorial ownership. \\
+\hline
+Accuracy (Ac) &
+0: claims not supported / no references / unclear basis; \newline
+1: partially supported, limited sourcing; \newline
+2: internally consistent, evidence-based framing, definitions aligned with established practice. \\
+\hline
+Coverage (C) &
+0: very narrow / superficial; \newline
+1: partial coverage (e.g., definition + a few tips); \newline
+2: comprehensive coverage (e.g., definition + signs + mitigation / measurement / examples). \\
+\hline
+Objectivity (O) &
+0: purely promotional / sales-driven; \newline
+1: potential commercial bias but still informative; \newline
+2: balanced and educational, minimal promotional intent. \\
+\hline
+Date (D) &
+0: clearly outdated for the topic; \newline
+1: no publication date or limited recency signals; \newline
+2: dated and recent (supporting currency of practices). \\
+\hline
+Significance (S) &
+0: weak relevance to TD/RE; \newline
+1: indirectly relevant; \newline
+2: directly relevant to TD management concepts/practices applicable to this research. \\
+\hline
+\end{tabular}
+\caption{AACODS quality assessment rubric (0--2 per criterion).}
+\label{tab:aacods_rubric}
+\end{table}
+
+Each non-academic source is rigorously evaluated against these six criteria to ensure credibility, relevance, and methodological soundness, with the resulting assessment
+and scoring for all included grey sources summarized in \tabref{tab:aacods_applied}.
+
+\begin{table}[!htbp]
+\centering
+\caption{AACODS quality assessment applied to the selected grey literature sources (0--2 per criterion).}
+\label{tab:aacods_applied}
+\renewcommand{\arraystretch}{1.25}
+\small
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|
+    c
+    |p{6.2cm}
+    |p{3.8cm}
+    |c
+    |c|c|c|c|c|c|c|}
+\hline
+\rowcolor{gray!30}
+\textbf{ID} &
+\textbf{Title} &
+\textbf{Source Author / Organization} &
+\textbf{Year} &
+\textbf{A} &
+\textbf{Ac} &
+\textbf{C} &
+\textbf{O} &
+\textbf{D} &
+\textbf{S} &
+\textbf{Total} \\
+\hline
+G1 & What is Tech Debt? Signs \& How to Effectively Manage It & \citeauthor{Atlassian} & n.d. & 2 & 2 & 2 & 1 & 1 & 2 & 10 \\
+\hline
+G2 & What is Technical Debt in Software Development and How to Manage It? & \citeauthor{GeeksForGeeks} & n.d. & 1 & 1 & 2 & 1 & 1 & 2 & 8 \\
+\hline
+G3 & What Is Technical Debt: A Guide & \citeauthor{Coursera2024} & 2024 & 2 & 2 & 2 & 2 & 2 & 2 & 12 \\
+\hline
+G4 & What is technical debt? & \citeauthor{Github2024} & 2024 & 2 & 2 & 1 & 1 & 2 & 2 & 10 \\
+\hline
+G5 & Technical Debt (Tech Debt): A Complete Guide & \citeauthor{Confluent} & n.d. & 2 & 1 & 2 & 1 & 1 & 2 & 9 \\
+\hline
+G6 & What is Technical Debt? Examples, Prevention \& Best Practices & \citeauthor{Mendix2024} & 2024 & 2 & 1 & 2 & 1 & 2 & 2 & 10 \\
+\hline
+G7 & Technical Debt {\textbar} Definition \& Guide & \citeauthor{Sonarsource} & n.d. & 2 & 2 & 2 & 1 & 1 & 2 & 10 \\
+\hline
+G8 & Technical Debt: How to Identify, Measure, and Manage & \citeauthor{Islam2024} & 2024 & 1 & 1 & 2 & 1 & 2 & 2 & 9 \\
+\hline
+G9 & How to Measure Technical Debt in Software Development & \citeauthor{Jain2025} & 2025 & 2 & 1 & 2 & 1 & 2 & 2 & 10 \\
+\hline
+G10 & Technical Debt \& How To Manage It & \citeauthor{Mitton2023} & 2023 & 2 & 2 & 2 & 1 & 2 & 2 & 11 \\
+\hline
+\end{tabular}%
+}
+\end{table}
+\end{samepage}
+
+\FloatBarrier
 
 \chapter{Research Methodology}
 This study follows a mixed approach based in \gls{dsr}, which, according to \textcite{Brocke2020}, is a

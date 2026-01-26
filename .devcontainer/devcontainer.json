@@ -7,7 +7,7 @@
 	"features": {
 		"ghcr.io/prulloac/devcontainer-features/latex:1": {
 			"scheme": "small",
-			"packages": "csquotes,biblatex-apa,etoolbox,logreq,url,biber,etex,transparent,titlesec,glossaries,biblatex,svg,adjustbox,chngcntr,texdoc,collection-latexrecommended,collection-fontsrecommended,courier-scaled,nextpage,enumitem,epigraph,cleveref,graphics"
+			"packages": "placeins,csquotes,biblatex-apa,etoolbox,logreq,url,biber,etex,transparent,titlesec,glossaries,biblatex,svg,adjustbox,chngcntr,texdoc,collection-latexrecommended,collection-fontsrecommended,courier-scaled,nextpage,enumitem,epigraph,cleveref,graphics"
 		},
 		"ghcr.io/devcontainers/features/go:1": {
 		"version": "latest"
