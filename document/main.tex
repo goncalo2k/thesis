@@ -744,19 +744,30 @@ Collectively, the outcomes of this review have both academic value and real worl
 In conclusion, this review reinforces that \gls{td} is a controllable outcome of intentional design decisions, rather than an inevitable effect of fast-paced development. By treating requirements with the necessary rigor and strategic attention they require, development teams are enabled to create systems that are not only functional, but also sustainable.
 
 \section{Multivocal Literature Review}
-\noindent In addition to the \gls{slr}, a \gls{mlr} was also conducted, complementing the findings previously obtained from academic literature with grey literature sources, so that more practical perspectives can also be taken into consideration, as the software engineering industry is in constant evolution, and new practices, tools and frameworks are frequently adopted by teams in this industry \parencite{Garousi2019}. The \gls{mlr} aims to capture insights that may not still be presented in academic publications (and, therefore, that might have not been captured by the previous \gls{slr}), thus providing a more well-rounded view of the relationship between \gls{re} and \gls{td} and what are the practices utilized in the real world to handle this subject. Another goal of this MLR was to also provide better comprehension on how the industry currently defines \gls{td} and how requirements engineering processes have been adapted over time to better tackle \gls{td} management.
-In order to conduct the \gls{mlr}, the search string was tweaked, so that it matches the exact goal of this literature review - represented on \tabref{tab:mlr_search_string}. Pieces of grey literature were also filtered by selection criteria previously defined, displayed in \tabref{tab:mlr_filters}.
+\noindent In addition to the \gls{slr}, a \gls{mlr} was also conducted, complementing the findings previously obtained from 
+academic literature with grey literature sources, so that more practical perspectives can also be taken into consideration, as the 
+software engineering industry is in constant evolution, and new practices, tools and frameworks are frequently adopted by teams in 
+this industry \parencite{Garousi2019}. The \gls{mlr} aims to capture insights that may not still be presented in academic 
+publications (and, therefore, that might have not been captured by the previous \gls{slr}), thus providing a more well-rounded view 
+of the relationship between \gls{re} and \gls{td} and what are the practices utilized in the real world to handle this subject. 
+Another goal of this MLR was to also provide better comprehension on how the industry currently defines \gls{td} and how \gls{re} 
+processes have been adapted over time to better tackle \gls{td} management. 
 
+\subsection{Conducting the Literature Review}
+In order to conduct the \gls{mlr}, the search string was tweaked, so that it is more adequate to the search engines used. This can 
+be seen on \tabref{tab:mlr_search_string}.
 \begin{table}[htbp]
     \centering
     \begin{tabular}{|>{\columncolor{gray!30}}c|c|}
         \hline
-        Search String & ""Requirement" AND "Technical" AND "Debt" in "Software""\\
+        Search String & "Requirements" AND "Technical" AND "Debt" AND "Software" \\
         \hline
     \end{tabular}
     \caption{MLR Search string}
     \label{tab:mlr_search_string}
 \end{table}
+
+The pieces of grey literature retrieved were filtered by the selection criteria presented on \tabref{tab:mlr_filters}. 
 
 \begin{table}[htbp]
     \centering
@@ -765,16 +776,190 @@ In order to conduct the \gls{mlr}, the search string was tweaked, so that it mat
         \rowcolor{gray!30}
         ID & Filter \\
         \hline
-        1 & Must be relevant for the study research \\
+        1 & Content must be relevant for the study research \\
         \hline
-        2 & English \\
+        2 & Written in English \\
         \hline
-        3 & Source must be trusted \\
+        3 & Quality Assessment (QA) \\
         \hline
     \end{tabular}
     \caption{Search Filters}
     \label{tab:mlr_filters}
 \end{table}
+
+
+It is important to note that, in order to mitigate the inherent risks of bias and varying quality in grey literature, this study 
+employs the AACODS (Authority, Accuracy, Coverage, Objectivity, Date, and Significance) checklist, which is described in 
+\tabref{tab:aacods_rubric}, as a formal quality assessment framework. Specifically, the 'Authority' and 'Objectivity' markers are used 
+to distinguish between evidence-based practitioner insights and purely promotional or commercial content. The application of such 
+systematic filter ensures that the multivocal synthesis is grounded in high-quality, reliable data that complements the 
+peer-reviewed academic literature.
+
+\begin{table}[htbp]
+\centering
+\begin{tabular}{|p{3cm}|p{11cm}|}
+\hline
+\rowcolor{gray!30}
+\textbf{Criterion} & \textbf{Operationalization (0--2 scoring)} \\
+\hline
+Authority (A) &
+0: anonymous / unclear author or organization; \newline
+1: identifiable author/organization but limited credibility signals; \newline
+2: reputable organization or clearly accountable author/editorial ownership. \\
+\hline
+Accuracy (Ac) &
+0: claims not supported / no references / unclear basis; \newline
+1: partially supported, limited sourcing; \newline
+2: internally consistent, evidence-based framing, definitions aligned with established practice. \\
+\hline
+Coverage (C) &
+0: very narrow / superficial; \newline
+1: partial coverage (e.g., definition + a few tips); \newline
+2: comprehensive coverage (e.g., definition + signs + mitigation / measurement / examples). \\
+\hline
+Objectivity (O) &
+0: purely promotional / sales-driven; \newline
+1: potential commercial bias but still informative; \newline
+2: balanced and educational, minimal promotional intent. \\
+\hline
+Date (D) &
+0: clearly outdated for the topic; \newline
+1: no publication date or limited recency signals; \newline
+2: dated and recent (supporting currency of practices). \\
+\hline
+Significance (S) &
+0: weak relevance to TD/RE; \newline
+1: indirectly relevant; \newline
+2: directly relevant to TD management concepts/practices applicable to this research. \\
+\hline
+\end{tabular}
+\caption{AACODS quality assessment rubric (0--2 per criterion).}
+\label{tab:aacods_rubric}
+\end{table}
+
+Each non-academic source is rigorously evaluated against these six criteria to ensure credibility, relevance, and methodological soundness, being the resulting assessment 
+and scoring for all included grey sources summarized in \tabref{tab:aacods_applied}.
+
+\begin{table}[htbp]
+\centering
+\caption{AACODS quality assessment applied to the selected grey literature sources (0--2 per criterion).}
+\label{tab:aacods_applied}
+\renewcommand{\arraystretch}{1.25}
+\small
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|
+    c
+    |p{6.2cm}
+    |p{3.8cm}
+    |c
+    |c|c|c|c|c|c|c|}
+\hline
+\rowcolor{gray!30}
+\textbf{ID} &
+\textbf{Title} &
+\textbf{Source Author / Organization} &
+\textbf{Year} &
+\textbf{A} &
+\textbf{Ac} &
+\textbf{C} &
+\textbf{O} &
+\textbf{D} &
+\textbf{S} &
+\textbf{Total} \\
+\hline
+
+G1 &
+What is Tech Debt? Signs \& How to Effectively Manage It &
+\citeauthor{Atlassian} &
+n.d. & 2 & 2 & 2 & 1 & 1 & 2 & 10 \\
+\hline
+
+G2 &
+What is Technical Debt in Software Development and How to Manage It? &
+\citeauthor{GeeksForGeeks} &
+n.d. & 1 & 1 & 2 & 1 & 1 & 2 & 8 \\
+\hline
+
+G3 &
+What Is Technical Debt: A Guide &
+\citeauthor{Coursera2024} &
+2024 & 2 & 2 & 2 & 2 & 2 & 2 & 12 \\
+\hline
+
+G4 &
+What is technical debt? &
+\citeauthor{Github2024} &
+2024 & 2 & 2 & 1 & 1 & 2 & 2 & 10 \\
+\hline
+
+G5 &
+Technical Debt (Tech Debt): A Complete Guide &
+\citeauthor{Confluent} &
+n.d. & 2 & 1 & 2 & 1 & 1 & 2 & 9 \\
+\hline
+
+G6 &
+What is Technical Debt? Examples, Prevention \& Best Practices &
+\citeauthor{Mendix2024} &
+2024 & 2 & 1 & 2 & 1 & 2 & 2 & 10 \\
+\hline
+
+G7 &
+Technical Debt {\textbar} Definition \& Guide &
+\citeauthor{Sonarsource} &
+n.d. & 2 & 2 & 2 & 1 & 1 & 2 & 10 \\
+\hline
+
+G8 &
+Technical Debt: How to Identify, Measure, and Manage &
+\citeauthor{Islam2024} &
+2024 & 1 & 1 & 2 & 1 & 2 & 2 & 9 \\
+\hline
+
+G9 &
+How to Measure Technical Debt in Software Development &
+\citeauthor{Jain2025} &
+2025 & 2 & 1 & 2 & 1 & 2 & 2 & 10 \\
+\hline
+
+G10 &
+Technical Debt \& How To Manage It &
+\citeauthor{Mitton2023} &
+2023 & 2 & 2 & 2 & 1 & 2 & 2 & 11 \\
+\hline
+\end{tabular}%
+}
+\end{table}
+
+\subsection{Contribution of Grey Literature}
+The analysis of grey literature sources complements the findings of the \gls{slr} by adding a practitioner-orientedand operational perspective to the discussion of \gls{td}. 
+Across the selected sources, \gls{td} is consistently framed as a pragmatic consequence of delivery pressure, evolving requirements, and short-term prioritization, a view 
+that aligns with academic characterizations of \gls{td} as a result of conscious or implicit trade-offs made under constraints \parencite{AAtlassian,GGithub2024 Confluent}.
+These practitioner-oriented definitions reinforce the \gls{slr} conclusion that \gls{td} is not produced at random, but rather a predictable outcome of development practices 
+that emphasize speed and flexibility over long-term quality.
+
+While the \gls{slr} provides detailed explanations of how deficiencies in \gls{re}, such as volatile requirements,
+under-documented \gls{nfr}, and weak stakeholder alignment, lead to the accumulation of \gls{rtd}, grey literature tends to address \gls{td} at a more general level, 
+rarely distinguishing between requirement-related and other forms of debt. Most sources discuss \gls{td} holistically, focusing on observable symptoms and downstream 
+consequences rather than on upstream requirement quality as a root cause \parencite{GeeksForGeeks, Coursera2024, Sonarsource}. This contrast highlights the complementary 
+role of grey literature and how it reflects how \gls{td} is commonly understoodand communicated in industry, even when the underlying requirement-related mechanisms remain 
+implicit.
+
+The main contribution of grey literature lies in its emphasis on actionable management and prevention practices. Several sources explicitly highlight practical strategies 
+such as early identification of \gls{td}, prioritization alongside feature development, and the adoption of preventive best practices within development workflows 
+\parencite{Mendix2024,Mitton2023}. These recommendations resonate with the \gls{slr} findings that proactive \gls{td} management is more effective than reactive remediation, 
+while offering concrete examples of how such management is currently operationalized in industrial settings.
+
+Additionally, the challenge of making \gls{td} visible and measurable is addressed, by discussing qualitative and quantitative approaches to identifying and tracking debt, 
+including the use of metrics, indicators, and monitoring practices aimed at supporting decision-making \parencite{Islam2024, Jain2025}. This operational focus complements 
+academic work that stresses the importance of traceability and documentation, by illustrating how organizations often rely on downstream measurement mechanisms when upstream 
+requirement artifacts are incomplete.
+
+From a methodological standpoint, the application of the AACODS framework makes explicit the distinction between conceptual, educational sources and those offering more 
+specialized or practice-oriented insights. While the \gls{slr} remains the primary source of causal explanations linking \gls{re} quality to \gls{rtd}, the reviewed grey 
+literature contributes with experience-driven perspectives on tools, practices, and organizational attitudes toward \gls{td} management \parencite{Sonarsource,Confluent}. In 
+alignment with the conclusions of the \gls{slr}, this \gls{mlr} highlights the importance of high-quality \gls{re} as a preventive mechanism against \gls{td}, while also 
+demonstrating how organizations cope with the consequences of insufficient requirements through reactive and operational management strategies.
 
 \chapter{Research Methodology}
 This study follows a mixed approach based in \gls{dsr}, which, according to \textcite{Brocke2020}, is a
@@ -937,6 +1122,52 @@ S67 & Identifying Design and Requirement Self-Admitted Technical Debt Using N-gr
 S68 & The Evolution of Requirements Practices in Software Startups & \citeauthor{Gralha2018} & 2018 & Conference Paper & 2018 IEEE/ACM 40th International Conference on Software Engineering (ICSE) \\
 
 S69 & Software Sustainability: Research and Practice from a Software Architecture Viewpoint & \citeauthor{Venters2018} & 2017 & Journal Article & Journal of Systems and Software \\
+
+\end{longtable}
+\end{center}
+\end{landscape}
+
+\begin{landscape}
+\begin{center}
+\small
+\renewcommand{\arraystretch}{1.1}
+\begin{longtable}{|c|p{6cm}|p{4.5cm}|c|p{3cm}|p{6cm}|}
+\hline
+\textbf{ID} & \textbf{Title} & \textbf{Author / Organization} & \textbf{Year} & \textbf{Type} & \textbf{Source} \\
+\hline
+\endfirsthead
+
+\hline
+\textbf{ID} & \textbf{Title} & \textbf{Author / Organization} & \textbf{Year} & \textbf{Type} & \textbf{Source} \\
+\hline
+\endhead
+
+\hline
+\endfoot
+
+\hline
+\endlastfoot
+
+G1  & What is Tech Debt? Signs \& How to Effectively Manage It {\textbar} Atlassian & \citeauthor{Atlassian} & n.d. & Online Source & https://www.atlassian.com/agile/software-development/technical-debt \\
+\hline
+G2  & What is Technical Debt in Software Development and How to Manage It? & \citeauthor{GeeksForGeeks} & n.d. & Online Source & https://www.geeksforgeeks.org/blogs/what-is-technical-debt-in-software-development-and-how-to-manage-it/ \\
+\hline
+G3  & What Is Technical Debt: A Guide & \citeauthor{Coursera2024} & 2024 & Online Source & https://www.coursera.org/articles/technical-debt \\
+\hline
+G4  & What is technical debt? & \citeauthor{Github2024} & 2024 & Online Source & https://github.com/resources/articles/what-is-technical-debt \\
+\hline
+G5  & Technical Debt (Tech Debt): A Complete Guide & \citeauthor{Confluent} & n.d. & Online Source & https://www.confluent.io/learn/tech-debt/ \\
+\hline
+G6  & What is Technical Debt? Examples, Prevention \& Best Practices & \citeauthor{Mendix2024} & 2024 & Online Source & https://www.mendix.com/blog/what-is-technical-debt/ \\
+\hline
+G7  & Technical Debt {\textbar} Definition \& Guide & \citeauthor{Sonarsource} & n.d. & Online Source & https://www.sonarsource.com/resources/library/technical-debt/ \\
+\hline
+G8  & Technical Debt: How to Identify, Measure, and Manage & \citeauthor{Islam2024} & 2024 & Online Source & https://innovirtual.de/technical-debt-how-to-identify-measure-and-manage/ \\
+\hline
+G9  & How to Measure Technical Debt in Software Development & \citeauthor{Jain2025} & 2025 & Online Source & https://visuresolutions.com/alm-guide/measure-technical-debt/ \\
+\hline
+G10 & Technical Debt \& How To Manage It & \citeauthor{Mitton2023} & 2023 & Online Source & \url{https://www.splunk.com/en_us/blog/learn/technical-debt.html} \\
+\hline
 
 \end{longtable}
 \end{center}
