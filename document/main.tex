@@ -374,16 +374,25 @@ How is the quality of business and system requirements related to technical debt
 
 \begin{table}[htbp]
     \centering
-    \begin{tabular}{|>{\columncolor{gray!30}}c|c|}
+    \renewcommand{\arraystretch}{1.2}
+    \begin{tabular}{|
+        >{\columncolor{gray!30}\raggedright\arraybackslash}p{3.2cm}
+        |p{11cm}|
+    }
         \hline
-        Keywords & Technical Debt, Requirements Technical Debt, Requirement Debt, Requirements, Requirements Engineering, Software \\
+        \textbf{Keywords} &
+        Technical Debt; Requirements Technical Debt; Requirement Debt; Requirements; Requirements Engineering; Software \\
         \hline
-        Search String & \textit{("Technical Debt" OR "Requirements Technical Debt" OR "Requirement Debt") AND ("Requirements" OR "Requirements Engineering") AND "Software"} \\
+        \textbf{Search String} &
+        \textit{("Technical Debt" OR "Requirements Technical Debt" OR "Requirement Debt") 
+        AND ("Requirements" OR "Requirements Engineering") 
+        AND "Software"} \\
         \hline
     \end{tabular}
-    \caption{SLR Keywords and Search string}
+    \caption{SLR keywords and search string}
     \label{tab:slr_keywords_and_search_string}
 \end{table}
+
 
 \subsubsection{Study Selection}
 \noindent For this study, 7 filters where used to thin down the search result, listed on \tabref{tab:filters}.
@@ -692,36 +701,34 @@ are more prone to \gls{rtd} and are harder to proactively manage. Besides this, 
 validation also increase the likelyhood of late discovery and costly remediation of \gls{rtd}.
 
 \hspace*{\linewidth}\par
-\noindent\textbf{RQ.6}: 
-How is the quality of business and system requirements related to technical debt?
+\noindent\textbf{RQ.6}: How is the quality of business and system requirements related to technical debt?
 
-Throughout the reviewed literature, there is a strong and systematic relationship 
-between the quality of business and system requirements and the accumulation of 
-\gls{td}, particularly \gls{rtd}. Poorly specified, ambiguous, incomplete, 
-volatile, or under-documented requirements - especially those related to 
-\gls{nfr} - tend to prioritize short-term delivery speed over 
-long-term \gls{sq}, leading up to deferred costs that later materialize as 
-refactors, architectural degradation, increased maintenance effort, and reduced 
-system evolvability and maintainability \parencite{Rios2019,Melo2022}. 
-Empirical studies indicate that insufficient or imprecise requirements weaken 
-shared understanding and early decision-making, allowing debt to further propagate 
-from requirements into architecture, design, code, documentation, and even 
-process-related artifacts \parencite{Rios2019,Besker2019}. Research on 
-requirements quality highlights that low-quality requirements structurally 
-undermine quality-in-use, making defects and rework inevitable rather than 
-exceptional \textcite{Femmer2019}. Large-scale industrial and AGILE case studies 
-reinforce this link by showing that under-documented or deprioritized \gls{qr} — 
-such as maintainability, performance, security, or reliability — are clear 
-indicators of latent \gls{td} whose negative effects intensify over time 
-\parencite{Freire2020,Scott2025,Borg2025}. Furthermore, weak requirements 
-alignment and stakeholder communication amplify debt accumulation beyond the 
-technical level, contributing to socio-technical and process debt in complex 
-organizational settings \parencite{Klotins2018,Herath2025,Herath2025b}. Overall, 
-the literature converges on the view that high-quality \gls{re}, characterized by 
-clarity, completeness, stakeholder alignment, and explicit consideration of 
-\gls{qa}, is the a primary preventive mechanism against \gls{td}, 
-whereas deficiencies at the requirements level significantly increase its 
-likelihood and long-term impact.
+Across current academic knowledge, there is strong and converging evidence that the quality of both \gls{br} and \gls{sr} 
+is a primary determinant of the accumulation of \gls{td}, particularly \gls{rtd}. At the business level, low-quality requirements,
+such as vague strategic goals, unstable priorities, or insufficient articulation expectations, create misalignment between stakeholders 
+and development teams. This misalignment propagates downstream, forcing teams to make premature or poorly justified design and 
+implementation decisions, which later materialize as architectural rework, scope creep, and persistent corrective effort \parencite{Rios2019,Besker2019}. 
+Studies show that when \gls{br} fail to explicitly capture long-term concerns, especially those related to \gls{sq} and \gls{qa}, 
+teams systematically favor short-term delivery over sustainable system evolution, leading to systematic generation of \gls{td} early 
+in the lifecycle \parencite{Freire2020}.
+
+At the system level, poor-quality requirements, characterized by ambiguity, incompleteness, volatility, or inadequate documentation,
+directly translate into implementation-level debt. In particular, under-specified or deprioritized \gls{nfr} such as maintainability, 
+performance, security, or reliability are repeatedly identified as dominant sources of \gls{rtd}, as they constrain architectural 
+decisions only implicitly and are often ignored until late development stages \parencite{Melo2022,Rios2019}. This deferral results in 
+increased refactoring effort, architectural degradation, and reduced evolvability, reinforcing the accumulation of interest over time. 
+Case studies in large-scale, industrial and AGILE environments further confirm that insufficient system-level requirements weaken 
+shared understanding and early decision-making, allowing debt to propagate beyond requirements into architecture, code, documentation, 
+and even process-related artifacts \parencite{Besker2019,Rios2019}.
+
+Furthermore, the literature highlights that deficient requirements are not isolated technical issues but socio-technical ones. 
+Weak alignment between \gls{br} and \gls{br}, combined with ineffective stakeholder communication, amplifies \gls{td} accumulation 
+by obscuring responsibility, delaying corrective action, and normalizing workarounds, or "quick fixes", as standard practice 
+\parencite{Klotins2018}. From a quality perspective, low-quality requirements structurally undermine \gls{sq}, making defects, rework, 
+and corrective maintenance inevitable rather than exceptional \parencite{Femmer2019}. Overall, the evidence consistently indicates 
+that high-quality \gls{re}, characterized by clarity, completeness, stability, traceability, and explicit consideration of \gls{qa} 
+across both business and system levels, acts as a primary preventive mechanism against \gls{td}, whereas deficiencies at either level 
+significantly increase its likelihood, persistence, and long-term impact.
 
 \subsection{\gls{slr} Conclusions}
 
@@ -836,7 +843,6 @@ Significance (S) &
 \caption{AACODS quality assessment rubric (0--2 per criterion).}
 \label{tab:aacods_rubric}
 \end{table}
-
 Each non-academic source is rigorously evaluated against these six criteria to ensure credibility, relevance, and methodological soundness, being the resulting assessment 
 and scoring for all included grey sources summarized in \tabref{tab:aacods_applied}.
 
