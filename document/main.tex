@@ -246,14 +246,13 @@ the phenomena explored in the \gls{slr}.
 \section{Requirements and Types of Requirements}
 \noindent In software engineering, requirements constitute the primary means by which stakeholder intent is transformed 
 into explicit expectations for a software system, guiding both implementation decisions and quality objectives 
-\parencite{Femmer2019, Behutiye2019}. Rather 
-than being merely a technical specification artifact, requirements operate at the intersection of business concerns and 
-technical realization, bridging communication between organizational stakeholders and development teams 
-\parencite{Femmer2019, Rios2019}. 
+\parencite{Femmer2019, Behutiye2019}. Rather than being merely a technical specification artifact, requirements operate 
+at the intersection of business concerns and technical realization, bridging communication between organizational 
+stakeholders and development teams \parencite{Femmer2019, Rios2019}. 
 
-Requirements can be conceptually evaluated along multiple dimensions, however, for the scope of this analysis, their 
-qualification mostly distinguishes, on the abstraction level, between \gls{br} and \gls{sr}, while distinguishing 
-between \gls{fr} and \gls{nfr} on the behavioral nature of requirements \parencite{Femmer2019, Behutiye2022}.
+Requirements can be conceptually evaluated along multiple dimensions, however, for the scope of this analysis, they will 
+be distinguished between \gls{br} and \gls{sr}, while also being qualified as \gls{fr} or \gls{nfr} on the behavioral 
+nature of requirements \parencite{Femmer2019, Behutiye2022}.
 
 For the purposes of this study, \gls{fr} and \gls{nfr} are treated as the two primary categories of requirements, 
 while acknowledging that both may originate at either the business or system level \parencite{Behutiye2019}. This 
@@ -261,22 +260,46 @@ perspective supports a unified view of \gls{re}, in which both value-oriented co
 considered \parencite{Femmer2019}, and provides a foundation for analyzing how deficiencies in requirement quality 
 contribute to the emergence and accumulation of \gls{td} \parencite{Rios2019, Melo2022}.
 
+Beyond categorical distinctions, requirements can also be understood in relation to the 
+software development lifecycle. The \textit{SWEBOK Guide} conceptualizes software engineering 
+as a set of interrelated knowledge areas spanning requirements, architecture, design, 
+construction, testing, maintenance, configuration management, and operations 
+\parencite{SWEBOK2024}. Within this lifecycle-oriented view, requirements do not exist in isolation 
+as static specifications, but instead act as upstream inputs that shape architectural decisions, 
+design strategies, construction practices, verification activities, and long-term maintenance 
+outcomes. The Software Requirements knowledge area explicitly addresses activities such as 
+elicitation, analysis, specification, validation, and management, while subsequent knowledge 
+areas (e.g., Software Architecture, Software Design, Software Construction, and Software 
+Maintenance) operationalize and refine these requirements across the lifecycle 
+\parencite{SWEBOK2024}. 
+
+From this perspective, classifying requirements according to their influence across lifecycle 
+stages provides an analytical lens for understanding how deficiencies at the requirements 
+level propagate into downstream artifacts. In particular, incomplete, volatile, or poorly 
+validated requirements can introduce inconsistencies that materialize during architectural 
+evaluation, design refinement, testing, or maintenance, thereby contributing to the 
+accumulation of requirements-related technical debt. This lifecycle-oriented qualification 
+aligns the present study with the SWEBOK conception of software engineering as an 
+integrated and iterative process rather than a sequence of isolated phases \parencite{SWEBOK2024}.
+
 \subsection{Quality Attributes and Quality Requirements}
-\noindent \gls{qa} describe the non-functional characteristics that determine how a software system performs, evolves, and 
-sustains value over time. Commonly cited \gls{qa} include performance, reliability, security, maintainability, usability, 
-and scalability, among others. In \gls{re}, these attributes are typically captured through \gls{nfr} or, more specifically, 
-through \gls{qr}, which constrain and shape the realization of functional behavior \parencite{Femmer2019, Behutiye2022}.
+\noindent \gls{qa} describe the technical characteristics that determine how a software system 
+performs, evolves, and sustains value over time. Typical examples include performance, 
+reliability, security, maintainability, and scalability. In \gls{re}, these attributes are usually 
+captured as \gls{nfr} or, more specifically, as \gls{qr}, which constrain how functional behavior 
+is implemented rather than what the system does \parencite{Femmer2019, Behutiye2022}.
 
-Unlike \gls{fr}, which define discrete system capabilities, \gls{qa} are inherently cross-cutting and often 
-span multiple system components and development activities. As a result, they are more difficult to specify, validate, 
-and prioritize, particularly in agile and iterative development contexts \parencite{Behutiye2019}. When quality 
-attributes are insufficiently specified, deferred, or implicitly assumed, their realization is frequently postponed 
-to later development stages, increasing the likelihood of architectural erosion, rework, and the accumulation of \gls{td} 
-\parencite{Rios2019, Melo2022}.
+It is important to distinguish technical quality attributes from perceived product quality. 
+Perceived quality reflects users’ subjective experience, whereas \gls{qa} represent intrinsic 
+properties of the system’s architecture and implementation. In this study, \gls{qa} are treated 
+strictly as technical qualities independent of user perception.
 
-For this reason, \gls{qa} play a central role in this study’s analysis of requirement quality. Their treatment 
-provides an essential lens for understanding how shortcomings in requirements engineering practices translate into 
-long-term software quality degradation and requirements-related technical debt.
+Because these attributes are cross-cutting, they influence multiple components and lifecycle 
+activities, particularly architecture, testing, and maintenance \parencite{SWEBOK2024}. When 
+quality requirements are under-specified, deferred, or implicitly assumed, structural issues may 
+emerge later as increased maintenance effort, rework, or degraded system integrity 
+\parencite{Rios2019, Melo2022}. For this reason, deficiencies in \gls{qa} specification are treated 
+as upstream conditions that can contribute to the accumulation of \gls{td}.
 
 \subsection{Business and System Requirements}
 \noindent In addition to the commonly adopted distinction between \gls{fr} and \gls{nfr}, current literature implicitly 
@@ -348,7 +371,25 @@ practices, and organizational structures, producing compounding effects on long-
 \parencite{Melo2022,Herath2025b}.
 
 \chapter{Related Work}
-TODO: ADD MORE STUFF HERE!
+\noindent This chapter positions this dissertation within research on \gls{td} that explicitly extends beyond source code and, in particular, intersects with \gls{re} concerns that manifest as \gls{rtd}. It summarizes established strands on (i) multi-artifact \gls{td}, (ii) requirements-focused debt concepts, (iii) \gls{qr}/\gls{nfr} under-documentation, (iv) agile and large-scale settings, and (v) identification, monitoring, and prevention practices that motivate the research design and artifact orientation of this work.
+
+\section{Technical Debt Beyond Code and the Socio-Technical Perspective}
+\noindent Empirical work in agile projects explicitly frames \gls{td} as including outstanding tasks such as ``pending documentation update'' and ``use of bad design practices'', rather than being limited to code-level issues \parencite{Rios2019}. Complementing this, documentation debt is treated as a distinct debt type alongside design, architecture, and testing debt, and is described as ``one of the four most important types'' in an embedded-systems context \parencite{Rios2020}. Recent case-study evidence further argues that large-scale agile settings are ``particularly susceptible to various debt types: people, social, organizational, and process debt'', reinforcing that debt is intertwined with human and organizational factors \parencite{Herath2025b}. Consistently, industrial evidence in large agile development states that \gls{td} is shaped by ``social and organizational aspects'' and that organizations are ``prone to \gls{td} accumulating non-technical aspects'', motivating analyses that connect technical outcomes to socio-technical conditions \parencite{Ahmad2026}.
+
+\section{Requirements Technical Debt and Requirements Debt}
+\noindent Within requirements-focused work, \gls{rtd} has been defined as ``related to the distance between the ideal value of the specification and the actual implementation'' \parencite{Melo2022}. In that same line of work, \gls{rtd} is tied to requirements that are ``vague, incomplete, ambiguous'' and at an insufficient ``level of detail'' \parencite{Melo2022}. A closely related conceptualization is \textit{requirements debt}, defined as ``the distance between the optimal requirements specification and the actual system implementation under domain assumptions and constraints'' \parencite{Lenarduzzi2019}. Together, these definitions justify treating debt as originating in requirements artifacts and decisions (specification quality, assumptions, and constraints) that later materialize as downstream implementation divergence \parencite{Melo2022,Lenarduzzi2019}.
+
+\section{Quality Requirements, Under-Documentation, and Debt Signals}
+\noindent Systematic mapping evidence in agile and rapid development reports that \gls{qr} ``are often ill-defined and not well addressed due to focus on quickly delivering functionality'' \parencite{Behutiye2019}. Multiple case evidence on documentation in agile software development further notes that teams may interpret ``just enough'' documentation differently and that this ``might be detrimental'' when documenting \gls{qr} \parencite{Behutiye2022}. Building a direct bridge to debt observability, recent work proposes that when \gls{nfr} ``are not documented in the appropriate artifacts'', this is considered ``an indication of \gls{td}'' \parencite{Scott2025}. In parallel, maintainability is treated as an internal product quality that is ``hard to assign business value to'', motivating approaches that support explicit target-setting for maintainability-related requirements \parencite{Borg2025}.
+
+\section{Project Context, Dependencies, and Operational Constraints}
+\noindent Domain-specific evidence from automotive software reports that behavioral dependencies can ``lead to integration failures'' and ``prevent modular reasoning'', highlighting why requirement and feature-level relationships matter for downstream change and refactoring effort \parencite{Vogelsang2020}. In production systems engineering, heterogeneous environments are reported to make the ``validation and verification of exchanged artifacts cumbersome and error-prone'', emphasizing how organizational and technical complexity can reduce early visibility of requirement-related issues \parencite{Waltersdorfer2020}.
+
+\section{Identifying, Monitoring, and Preventing Debt}
+\noindent For management practice, industrial monitoring work proposes ``ongoing monitoring of \gls{td} over time, by continuously plotting'' identified debt items, supporting the view that debt requires sustained visibility mechanisms \parencite{Arvanitou2019}. On prevention, global industrial survey evidence reports that \gls{td} prevention is addressed through actions such as ``project planning, adoption of good practices, and well-defined requirements'', while common impediments include ``lack of time, lack of resources, and management aspects'' \parencite{Freire2020}. As an additional observable signal, \gls{satd} research defines it as debt ``explicitly reported by the developers themselves'' and notes that prior work focused on sources such as source code comments and issue trackers \parencite{Li2023}. More specifically, code-comment research frames \gls{satd} as being ``self-admitted \gls{td}'' found in comments and motivates automated identification \parencite{Farias2020}. Extending beyond code, issue-tracker research explicitly includes categories such as ``documentation'' and ``requirement'' debt and states that \gls{satd} identification in issue tracking systems is ``still relatively unexplored'' \parencite{Li2020}. Finally, design- and requirements-oriented \gls{satd} work defines ``self-admitted requirement debt'' as comments that developers ``deliberately created'', and integrated approaches argue for identifying \gls{satd} from ``four different sources'' (comments, issues, commits, pull requests) \parencite{Wattanakriengkrai2018,Li2023}.
+
+\section{Positioning and Research Gaps Motivating This Dissertation}
+\noindent Despite advances in \gls{rtd} conceptualization and practice, documentation-related debt is reported as not being automatically identifiable by existing metric-based strategies, indicating a gap between debt phenomena and operational detection approaches \parencite{Rios2020}. Similarly, environmental-assumptions work states that a ``major source of \gls{rtd} stems from environmental assumptions'' and that the role of such assumptions in shaping \gls{rtd} ``remains largely unexplored'', motivating explicit treatment of assumptions as first-class requirements concerns \parencite{Alenazi2025c}. These gaps motivate the dissertation’s combined synthesis-and-artifact approach: consolidate evidence on how requirements properties, documentation practices, assumptions, and context shape \gls{rtd}, and operationalize the insights into workflows that improve visibility, prevention, and decision-making in real projects \parencite{Arvanitou2019,Freire2020,Melo2022}.
 
 \chapter{Research Methodology}
 This study follows a mixed approach based in \gls{dsr}, which, according to \textcite{Brocke2020}, is a
@@ -1204,6 +1245,5 @@ G10 & Technical Debt \& How To Manage It & \citeauthor{Mitton2023} & 2023 & Onli
 \end{longtable}
 \end{center}
 \end{landscape}
-
 
 \end{document}
