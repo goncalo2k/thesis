@@ -164,11 +164,25 @@
 }
 
 
-\chapter*{Acknowledgement}
+\begin{dedication}%
+
+\begin{flushright}
+\textit{Future dedication}
+\end{flushright}%
+\end{dedication}
+
+\setcounter{page}{1}
+\pagenumbering{roman} %
+\chapter*{Acknowledgment}
 
 Write here the acknowledgments and grants, if any
 
+\chapter*{Resumo}
+
+Abstract: TODO
+
 \chapter*{Abstract}
+TODO: THIS IS STILL NOT FINAL.
 
 In software engineering, the quality of Requirements Engineering (RE) is a key factor when predicting long-term success and sustainability of software systems. Requirements are the basis for any decision in the project, wether it is related to design, implementation, or maintenance. However, in practice, requirements are often incomplete, ambiguous, or unstable. These conditions provide a breeding ground to what is known as Requirements-Related Technical Debt (RTD). RTD captures the trade-offs made during the requirements phase that lead to architectural, functional, or documentation failures, which lead to increased maintenance costs, reduced adaptability, and long-term quality degradation.
 
@@ -223,10 +237,11 @@ The risk introduced by poor \gls{re} is particularly alarming in organizations t
 
 \noindent This chapter introduces the core theoretical concepts required to frame the relationship between \gls{re} 
 practices and the emergence, accumulation, and management of \gls{td}, with a particular emphasis on \gls{rtd}. It 
-clarifies what is meant by requirements (and their main categories), how \gls{re} is commonly understood in 
-contemporary software development contexts, and how \gls{td} is conceptualized in the literature, including its different 
-types and mechanisms of propagation. The chapter concludes by positioning requirements quality as an upstream driver of 
-downstream debt, linking foundational definitions to the phenomena explored in the \gls{slr}.
+clarifies the concept of requirements, their classification, how \gls{re} is commonly understood in 
+contemporary software development contexts, and how \gls{td} is conceptualized in the literature, including its 
+mechanisms of propagation. The chapter concludes by positioning requirements in the software development and product 
+lifecycle, while also placing \gls{qa} as an upstream driver of downstream debt, linking foundational definitions to 
+the phenomena explored in the \gls{slr}.
 
 \section{Requirements and Types of Requirements}
 \noindent In software engineering, requirements constitute the primary means by which stakeholder intent is transformed 
@@ -236,9 +251,9 @@ than being merely a technical specification artifact, requirements operate at th
 technical realization, bridging communication between organizational stakeholders and development teams 
 \parencite{Femmer2019, Rios2019}. 
 
-From a conceptual perspective, requirements can be viewed along two complementary dimensions. The first distinguishes 
-\gls{br}, from \gls{sr} \parencite{Behutiye2019, Melo2022}. The second dimension differentiates between \gls{fr} and 
-\gls{nfr} \parencite{Femmer2019, Behutiye2022}.
+Requirements can be conceptually evaluated along multiple dimensions, however, for the scope of this analysis, their 
+qualification mostly distinguishes, on the abstraction level, between \gls{br} and \gls{sr}, while distinguishing 
+between \gls{fr} and \gls{nfr} on the behavioral nature of requirements \parencite{Femmer2019, Behutiye2022}.
 
 For the purposes of this study, \gls{fr} and \gls{nfr} are treated as the two primary categories of requirements, 
 while acknowledging that both may originate at either the business or system level \parencite{Behutiye2019}. This 
@@ -333,6 +348,16 @@ practices, and organizational structures, producing compounding effects on long-
 \parencite{Melo2022,Herath2025b}.
 
 \chapter{Related Work}
+TODO: ADD MORE STUFF HERE!
+
+\chapter{Research Methodology}
+This study follows a mixed approach based in \gls{dsr}, which, according to \textcite{Brocke2020}, is a
+ “a problem-solving paradigm that seeks to enhance human knowledge via the creation of innovative
+  artifacts”. However, as the study strives to output both an artifact while also an explanation for a real-world phenomenon,
+  it also integrates \gls{csr}, which can be used “before the 
+  design of the artifact… to evaluate some preliminary forms or some parts of 
+  the artifact” \parencite{Costa2016}. For its theoretical foundation, both a \gls{slr} and a \gls{mlr} were performed.
+
 \section{Systematic Literature Review}
 \noindent In order to summarize all current relevant academic knowledge regarding the topic subject to research, to identify research gaps and to indicate new areas for posterior investigation, this study was conducted as a \gls{slr} and followed the guidelines defined by \textcite{Kitchenham2007}, that divides the research into 3 different stages: the review planning, the review conduction, and the review report. As per the authors, a systematic approach is predefined using a review protocol that creates research questions and the methods used in the review, in order to target such questions. This allows for the study to be repeatable, which improves its transparency and enables any reader to assess a study's rigor and integrity \parencite{Kitchenham2007}.
 
@@ -427,7 +452,46 @@ How is the quality of business and system requirements related to technical debt
 
 \noindent The research process was commenced with an initial, filter-less search of the selected search string across the 3 selected databases, which provided an output of 3111 results. Then, the first filter was introduced, "Title, Abstract or Keywords," which enabled a reduction in the number of studies to 452, followed by the 
 application of the filter "2018-2026," that reduced the number of studies to be considered to 364. Afterwards, the third filter, "English", was applied, subtracting 5 more studies from the current pool, bringing it down to 359. After this, the "Articles, Conference Papers, Short Papers, Reviews and Conference Reviews" filter was applied, thinning down the possible studies to 356. However, the biggest decrease in number of articles was introduced by the fifth filter, "15 or more Citations (applied only ot papers published before 2025)", that downsized the study pool to only 72. Subsequently, a manual reading of all the studies allowed to both filter duplicate results and to select only relevant studies. With this, there was a reduction of 8 more studies, bringing the number of selected studies down to 64. Finally, this reading also enabled the application of the seventh filter: the "Backward Snowballing Search", which was based on the relevance of the studies and their citations. Only studies that met prior filters and acceptance criteria were selected, resulting in a definitive pool size of 69 articles, which were considered the most relevant studies, with this research's goal in mind.
-\tabref{tab:filtration_process} and \figref{fig:slr_search_filtration_diagram}, synthesize the process of the selection of the studies.
+\tabref{tab:exclusion_criteria}, \tabref{tab:inclusion_criteria}, \tabref{tab:filtration_process} and \figref{fig:slr_search_filtration_diagram}, synthesize the process of the selection of the studies, as well as the used inclusion and exclusion criteria.
+
+\begin{table}[htbp]
+    \centering
+    \resizebox{\textwidth}{!}{%
+    \begin{tabular}{|c|}
+        \hline
+        \rowcolor{gray!30}
+        Criterion \\
+        Articles with less than 15 citations - criteria not applied to entries published in 2025 and 2026 \\
+        \hline
+        Articles that are not aligned with the study's subject \\
+        \hline
+        Duplicate articles \\
+        \hline
+    \end{tabular}%
+    }
+    \caption{Exclusion Criteria}
+    \label{tab:exclusion_criteria}
+\end{table}
+
+\begin{table}[htbp]
+    \centering
+    \resizebox{\textwidth}{!}{%
+    \begin{tabular}{|c|c|}
+        \hline
+        \rowcolor{gray!30}
+        Criterion \\
+        Articles with at least 15 citations - criteria not applied to entries published in 2025 and 2026 \\
+        \hline
+        Articles that are aligned with the study's subject \\
+        \hline
+        Unique articles \\
+        \hline
+    \end{tabular}%
+    }
+    \caption{Inclusion Criteria}
+    \label{tab:inclusion_criteria}
+\end{table}
+
 
 \begin{table}[htbp]
     \centering
@@ -473,7 +537,7 @@ application of the filter "2018-2026," that reduced the number of studies to be 
         \caption{Distribution of Studies by Year}
         \label{fig:year_distribuition}
     \end{subfigure}
-    \caption{Statistics}
+    \caption{Statistical Distribution of Selected Articles}
     \label{fig:statistics}
 \end{figure}
 
@@ -845,7 +909,7 @@ Significance (S) &
 2: directly relevant to TD management concepts/practices applicable to this research. \\
 \hline
 \end{tabular}
-\caption{AACODS quality assessment rubric (0--2 per criterion).}
+\caption{AACODS quality assessment rubric}
 \label{tab:aacods_rubric}
 \end{table}
 
@@ -854,7 +918,7 @@ and scoring for all included grey sources summarized in \tabref{tab:aacods_appli
 
 \begin{table}[!htbp]
 \centering
-\caption{AACODS quality assessment applied to the selected grey literature sources (0--2 per criterion).}
+\caption{AACODS quality assessment applied to the selected grey literature sources}
 \label{tab:aacods_applied}
 \renewcommand{\arraystretch}{1.25}
 \small
@@ -936,13 +1000,6 @@ literature contributes with experience-driven perspectives on tools, practices, 
 alignment with the conclusions of the \gls{slr}, this \gls{mlr} highlights the importance of high-quality \gls{re} as a preventive mechanism against \gls{td}, while also 
 demonstrating how organizations cope with the consequences of insufficient requirements through reactive and operational management strategies.
 
-\chapter{Research Methodology}
-This study follows a mixed approach based in \gls{dsr}, which, according to \textcite{Brocke2020}, is a
- “a problem-solving paradigm that seeks to enhance human knowledge via the creation of innovative
-  artifacts”. However, as the study strives to output both an artifact while also an explanation for a real-world phenomenon,
-  it also integrates \gls{csr}, which can be used “before the 
-  design of the artifact… to evaluate some preliminary forms or some parts of 
-  the artifact” \parencite{Costa2016}.
 
 \section{Design Science Research}
 \gls{dsr} sets the foundation this dissertation. As described by \parencite{Brocke2020}, \gls{dsr}
