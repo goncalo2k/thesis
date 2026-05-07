@@ -363,13 +363,93 @@ user and stakeholder outcomes, meaning that low-quality requirements increase th
 effects, while high-quality requirements act as a preventive control by reducing ambiguity and support consistent 
 implementation and architectural decisions over time \parencite{Femmer2019,Melo2022}.
 
+\subsection{Stable and Volatile Requirements}
+Requirements volatility refers to the frequency of changes, updates, and obsolescence that specifications undergo throughout 
+the software life cycle \parencite{Gralha2018, Melo2022}. Volatile requirements are typically market-driven and highly fluid, 
+particularly in innovative environments like software startups where development must adapt to rapid technological shifts, 
+competitive pressures, and continuous customer feedback \parencite{Gralha2018}. In these contexts, up-front \gls{re} is often 
+inadequate because specifications collected during early stages frequently become obsolete before project delivery 
+\parencite{Gralha2018}. Conversely, stable requirements exhibit low sensitivity to change and remain valid over extended periods, 
+a state often reached once a project matures and establishes a core set of clients to provide a clearer sense of feature 
+prioritization \parencite{Arvanitou2019, Gralha2018}. 
+
 \section{Technical Debt}
-\noindent \gls{td} is generally conceptualized as the accumulation of deferred work or suboptimal decisions that provide 
-short-term benefit but impose future cost. In agile software projects, \gls{td} is frequently linked to pressure-driven 
-trade-offs, incomplete knowledge, and prioritization mechanisms that favor immediate delivery \parencite{Rios2019,Besker2019}. 
-Current literature also emphasizes that \gls{td} is not limited to code-level issues: it can emerge across artifacts, 
-practices, and organizational structures, producing compounding effects on long-term maintainability and team productivity 
-\parencite{Melo2022,Herath2025b}.
+\gls{td} is generally conceptualized as the long-term consequences of making sub-optimal technical decisions or taking shortcuts 
+to meet immediate goals like rapid feature delivery or tight deadlines \parencite{Alenazi2025, Besker2019, Wattanakriengkrai2018}. 
+While providing immediate benefits, these choices accumulate a "debt" that creates a restrictive technical context, making future 
+changes significantly more expensive or even impossible \parencite{Besker2019}. If left unmanaged, \gls{td} can lead to systemic 
+inefficiency, possibly wasting up to 42\% of developer time and increasing maintenance costs up to 75\% of total lifecycle 
+expenditures \parencite{Alfayez2018, Arvanitou2019}. 
+
+
+\subsection{Dimensions of Technical Debt}
+Modern literature recognizes that \gls{td} is not limited to source code but emerges across various artifacts and disciplines 
+\parencite{Alenazi2025, Lenarduzzi2019}. Current literature recognizes at least 15 different types of \gls{td}, however, not 
+all of the currently identified dimensions are relevant for this study. The most relevant dimensions to this research are:
+    \gls{rtd}, which is defined as the gap between an optimal requirements specification and the actual system implementation 
+        \parencite{Alenazi2025}. \gls{rtd} can be qualified as one of three distinct types: type 0, which revolves around incomplete 
+        user needs; type 1, as requiremnets "smells", like ambiguity; and finally, type 2, as implementation mismatches 
+        \parencite{Alenazi2025, Lenarduzzi2019};
+
+    Architectural and Design, which involve sub-optimal structural decisions and violations of good design principles that 
+    reduce system robustness, maintainability, and scalability \parencite{Li2025};
+
+    Documentation Debt, which encompasses missing, inconsistent, outdated, or incomplete records that complicate system maintenance 
+    and software validation \parencite{Farias2020, Rios2020, Li2025}
+
+    Documentation debt specifically encompasses missing, inconsistent, outdated, or incomplete records that complicate system 
+    maintenance and software validation \parencite{Alenazi2025, Alfayez2018}. It is frequently incurred due to organizational 
+    constraints such as intense schedule pressure, which forces teams to prioritize functional delivery over internal documentation, 
+    often leaving it as the last task to be completed or forgetting it entirely \parencite{Alenazi2025, Alfayez2018}. This debt 
+    often manifests itself as \gls{satd}, where developers utilize code comments to explicitly flag areas where implementation 
+    rationale or system behavior is poorly described \parencite{Alenazi2025}.
+
+    Code Debt, which refers to poorly written, complex, or redundant source code that violates best practices and reduces 
+    readability, thereby increasing maintenance costs \parencite{Farias2020};
+
+    and Test and Documentation Debt, which arise from incomplete test coverage, lack of automation, or missing/outdated records that 
+    hinder software validation and knowledge recovery \parencite{Li2020};
+
+Beyond these core technical artifacts, \gls{td} can manifest in other dimensions such as Infrastructure Debt (sub-optimal configuration of 
+tools and processes), Security Debt (internal quality issues creating risks), and Non-Technical Debt, which includes process, social, and 
+organizational challenges \parencite{Vogel-Heuser2021}.
+
+\subsection{Metrics for Evaluation}
+To  effectively manage \gls{td}, organizations must transition from using it as a metaphor to objective quantification, a process 
+that begins with systematic identification and measurement \parencite{Melo2022}. While measuring \gls{td} is often a significant 
+challenge due to its nature, a robust evaluation framework provides the visibility necessary for stakeholders to make informed 
+decisions regarding when to incur or repay debt \parencite{Melo2022,Tornhill2022}. Current literature emphasizes that these metrics
+should not only capture the total volume of debt, but also estimate the wasted development time and increased defect rates 
+\parencite{Melo2022}. For this, the following metrics provide a multi-dimensional view of debt across economic, technical, 
+and process-oriented categories:
+\begin{enumerate}
+    \item Principal Calculation:
+        The cost of remediation, calculated as a function of the number of TD items, their severity, the average hours needed 
+        to fix them, and the labor cost per hour \parencite{Melo2022}.
+    \item Maintenance Effort: 
+        A formula used to estimate the ongoing interest, defined as \[ME=\frac{MF \times RV}{QF}\], where MF is the annual 
+        maintenance fraction (percentage of requirement changes), RV is the rebuild value (effort to rebuild the system), and QF 
+        is a Quality Factor representing current system health. QF is calculated using the formula \[QF = 2^{\frac{QualityLevel - 3}{2}}\], 
+        which produces specific adjustment factors such as 0.5, 0.7, 1.0, 1.4, or 2.0 \parencite{Melo2022}. Quality level is 
+        measured on a 1 to 5-star scale.
+    \item Time-in-Development (Cycle Time): 
+        A metric that measures the actual time spent on development per file, revealing that issues in low-quality code take on 
+        average 124\% longer to resolve than in healthy code \parencite{Tornhill2022}.
+\end{enumerate}
+
+\subsection{Debt-inducing Activities}
+\noindent \gls{td} accumulation stems from various sub-optimal practices and strategic shortcuts taken throughout the 
+software development life cycle. At the core, organizational constraints such as intense schedule pressure and short deadlines act 
+as primary "root causes," forcing development teams to adopt alternative solutions that favor immediate delivery over internal 
+quality \parencite{Alenazi2025, Alfayez2018}.
+Within the \gls{re} domain, debt-inducing activities include inadequate elicitation, lack of communication with customers, and the 
+use of ambiguous or vague documentation (referred to as "requirement smells"), which often result in a mismatch between 
+implementation and stakeholder goals \parencite{Alfayez2018, AlOmar2022}. Furthermore, sub-optimal structural decisions, such as 
+violations of modularity principles or the use of obsolete technologies, contribute to architectural and design debt, reducing 
+system robustness and scalability \parencite{Alfayez2018, Aljohani2025}. Besides this, implementation shortcuts, including sloppy 
+coding, code cloning, and hard-coding, also accelerate the decay of codebases \parencite{Alfayez2018, Aljohani2025}. Collectively, 
+these activities provide short-term benefits like faster time-to-market but impose a long-term "interest" in the form of increased 
+maintenance effort and systemic complexity \parencite{Alfayez2018, Aljohani2025}.
 
 \chapter{Related Work}
 \noindent This chapter positions this dissertation within research on \gls{td} that explicitly extends beyond source code and, in particular, intersects with \gls{re} concerns that manifest as \gls{rtd}. It summarizes established strands on (i) multi-artifact \gls{td}, (ii) requirements-focused debt concepts, (iii) \gls{qr}/\gls{nfr} under-documentation, (iv) agile and large-scale settings, and (v) identification, monitoring, and prevention practices that motivate the research design and artifact orientation of this work.
